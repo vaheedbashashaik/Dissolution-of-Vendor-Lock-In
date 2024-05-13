@@ -20,8 +20,13 @@ Passive/Standby	2	6	3
 
 
 
-
-
 Keywords:
 1.	Active or Primary database refers to the same word.
 2.	Passive or standby refers to the same word.
+
+
+Description:
+Branch: Main:- Contains readme file and shell executable file.
+Subbranch: Main:Code:- Contains code main code in text format.
+Subbranch: Main:Logs:- Contains logs of executables and commands.
+Subbranch: Main:Documentation:- Contains User manual for to recreate the results.
