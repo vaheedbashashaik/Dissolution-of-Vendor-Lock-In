@@ -1,0 +1,872 @@
+login as: opc
+Authenticating with public key "rsa-key-20210912"
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Wed Jul  6 11:03:00 2022 from 1.39.157.63
+[opc@passive-cloud-server ~]$ sudo su -
+Last login: Wed Jul  6 11:03:06 GMT 2022 on pts/1
+[root@passive-cloud-server ~]# su - oracle
+Last login: Wed Jul  6 11:03:11 GMT 2022 on pts/1
+[oracle@passive-cloud-server ~]$
+[oracle@passive-cloud-server ~]$ . roaenv
+-bash: roaenv: No such file or directory
+[oracle@passive-cloud-server ~]$ . oraenv
+ORACLE_SID = [oracle] ? ORCLCDB
+The Oracle base has been set to /opt/oracle
+[oracle@passive-cloud-server ~]$ cd /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/
+[oracle@passive-cloud-server trace]$ mv alert_ORCLCDB.log alert_ORCLCDB.log.bkp
+[oracle@passive-cloud-server trace]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 08:31:51 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> shut immediate;
+Database closed.
+Database dismounted.
+ORACLE instance shut down.
+SQL> exit
+Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/system01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/system01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/sysaux01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/users01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/undotbs01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+rm -rf    /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+rm -rf     /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/temp01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/temp012022-06-20_17-34-52-425-PM.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/temp01.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_temp_kc5m5g75_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_temp_kc5m80gs_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_temp_kc5pkgyg_.dbf
+rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_temp_kc5po98m_.dbf[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/sysaux01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/undotbs01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/system01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/sysaux01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/users01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/undotbs01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf    /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf     /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/temp01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/pdbseed/temp012022-06-20_17-34-52-425-PM.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLPDB1/temp01.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_temp_kc5m5g75_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_temp_kc5m80gs_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_temp_kc5pkgyg_.dbf
+[oracle@passive-cloud-server trace]$ rm -rf   /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_temp_kc5po98m_.dbf
+[oracle@passive-cloud-server trace]$
+[oracle@passive-cloud-server trace]$
+[oracle@passive-cloud-server trace]$ rman target /
+
+Recovery Manager: Release 21.0.0.0.0 - Production on Thu Jul 7 08:32:33 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database (not started)
+
+RMAN> exit
+
+
+Recovery Manager complete.
+[oracle@passive-cloud-server trace]$ ls alert_ORCLCDB.log
+alert_ORCLCDB.log
+[oracle@passive-cloud-server trace]$ rman target /
+
+Recovery Manager: Release 21.0.0.0.0 - Production on Thu Jul 7 08:32:42 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database (not started)
+
+RMAN> startup nomount;
+
+Oracle instance started
+
+Total System Global Area    2097148640 bytes
+
+Fixed Size                     9687776 bytes
+Variable Size                536870912 bytes
+Database Buffers            1543503872 bytes
+Redo Buffers                   7086080 bytes
+
+RMAN> restore controlfile from service 'primary-cloud-server';
+
+Starting restore at 07-JUL-22
+using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=28 device type=DISK
+
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: restoring control file
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:02
+output file name=/opt/oracle/oradata/ORCLCDB/control01.ctl
+output file name=/opt/oracle/oradata/ORCLCDB/control02.ctl
+Finished restore at 07-JUL-22
+
+RMAN> alter database mount;
+
+released channel: ORA_DISK_1
+Statement processed
+
+RMAN> restore database from service 'primary-cloud-server';
+
+Starting restore at 07-JUL-22
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=32 device type=DISK
+
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00001 to /opt/oracle/oradata/ORCLCDB/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:35
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00003 to /opt/oracle/oradata/ORCLCDB/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:25
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00004 to /opt/oracle/oradata/ORCLCDB/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00005 to /opt/oracle/oradata/ORCLCDB/pdbseed/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00006 to /opt/oracle/oradata/ORCLCDB/pdbseed/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00007 to /opt/oracle/oradata/ORCLCDB/users01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00008 to /opt/oracle/oradata/ORCLCDB/pdbseed/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00009 to /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00010 to /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00011 to /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:04
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00012 to /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00013 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00014 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00015 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00016 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00017 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00018 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00019 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00020 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00021 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00022 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:07
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00023 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:15
+channel ORA_DISK_1: starting datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+channel ORA_DISK_1: specifying datafile(s) to restore from backup set
+channel ORA_DISK_1: restoring datafile 00024 to /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+Finished restore at 07-JUL-22
+
+RMAN> exit
+
+
+Recovery Manager complete.
+[oracle@passive-cloud-server trace]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 08:42:32 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3394655
+        19 3394658
+        20 3394665
+        21 3394672
+        22 3394675
+        23 3394679
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3394709
+
+23 rows selected.
+
+SQL> exit
+Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+[oracle@passive-cloud-server trace]$ rman target /
+
+Recovery Manager: Release 21.0.0.0.0 - Production on Thu Jul 7 09:10:31 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: ORCLCDB (DBID=2878945410, not open)
+
+RMAN> recover database from service 'primary-cloud-server';
+
+Starting recover at 07-JUL-22
+using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=23 device type=DISK
+skipping datafile 5; already restored to SCN 2651836
+skipping datafile 6; already restored to SCN 2651836
+skipping datafile 8; already restored to SCN 2651836
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00001: /opt/oracle/oradata/ORCLCDB/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00003: /opt/oracle/oradata/ORCLCDB/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00004: /opt/oracle/oradata/ORCLCDB/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00007: /opt/oracle/oradata/ORCLCDB/users01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00009: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00010: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00011: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00012: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00013: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00014: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00015: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00016: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00017: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00018: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00019: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00020: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00021: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:03
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00022: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00023: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00024: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+
+starting media recovery
+
+unable to find archived log
+archived log thread=1 sequence=112
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of recover command at 07/07/2022 09:11:28
+RMAN-06054: media recovery requesting unknown archived log for thread 1 with sequence 112 and starting SCN of 3394339
+
+RMAN> exit
+
+
+Recovery Manager complete.
+[oracle@passive-cloud-server trace]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 09:13:06 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3398802
+         3 3398804
+         4 3398806
+         5 2651836
+         6 2651836
+         7 3398809
+         8 2651836
+         9 3398812
+        10 3398814
+        11 3398816
+        12 3398819
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3398821
+        14 3398847
+        15 3398849
+        16 3398851
+        17 3398853
+        18 3398856
+        19 3398858
+        20 3398861
+        21 3398863
+        22 3398866
+        23 3398868
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3398871
+
+23 rows selected.
+
+SQL> /
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3398802
+         3 3398804
+         4 3398806
+         5 2651836
+         6 2651836
+         7 3398809
+         8 2651836
+         9 3398812
+        10 3398814
+        11 3398816
+        12 3398819
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3398821
+        14 3398847
+        15 3398849
+        16 3398851
+        17 3398853
+        18 3398856
+        19 3398858
+        20 3398861
+        21 3398863
+        22 3398866
+        23 3398868
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3398871
+
+23 rows selected.
+
+SQL> exit
+Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+[oracle@passive-cloud-server trace]$ rman target /
+
+Recovery Manager: Release 21.0.0.0.0 - Production on Thu Jul 7 09:21:52 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: ORCLCDB (DBID=2878945410, not open)
+
+RMAN> recover database from service 'primary-cloud-server';
+
+Starting recover at 07-JUL-22
+using target database control file instead of recovery catalog
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=32 device type=DISK
+skipping datafile 5; already restored to SCN 2651836
+skipping datafile 6; already restored to SCN 2651836
+skipping datafile 8; already restored to SCN 2651836
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00001: /opt/oracle/oradata/ORCLCDB/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00003: /opt/oracle/oradata/ORCLCDB/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00004: /opt/oracle/oradata/ORCLCDB/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00007: /opt/oracle/oradata/ORCLCDB/users01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00009: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00010: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00011: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00012: /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00013: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00014: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00015: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00016: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00017: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00018: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00019: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00020: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00021: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00022: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00023: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+channel ORA_DISK_1: starting incremental datafile backup set restore
+channel ORA_DISK_1: using network backup set from service primary-cloud-server
+destination for restore of datafile 00024: /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+channel ORA_DISK_1: restore complete, elapsed time: 00:00:01
+
+starting media recovery
+
+unable to find archived log
+archived log thread=1 sequence=112
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of recover command at 07/07/2022 09:22:54
+RMAN-06054: media recovery requesting unknown archived log for thread 1 with sequence 112 and starting SCN of 3394339
+
+RMAN> exit
+
+
+Recovery Manager complete.
+[oracle@passive-cloud-server trace]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 09:23:26 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3400304
+         3 3400306
+         4 3400309
+         5 2651836
+         6 2651836
+         7 3400311
+         8 2651836
+         9 3400313
+        10 3400316
+        11 3400318
+        12 3400320
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3400323
+        14 3400325
+        15 3400327
+        16 3400330
+        17 3400332
+        18 3400334
+        19 3400337
+        20 3400339
+        21 3400342
+        22 3400344
+        23 3400346
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3400349
+
+23 rows selected.
+
+SQL> !hostname
+passive-cloud-server
+
+SQL> exit
+Disconnected from Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+[oracle@passive-cloud-server trace]$ cd /opt/oracle/reco/
+[oracle@passive-cloud-server reco]$ ls
+arch1_100_1107884035.dbf  arch1_102_1107884035.dbf  arch1_105_1107884035.dbf  arch1_11_1107884035.dbf   arch1_113_1107884035.dbf
+arch1_10_1107884035.dbf   arch1_103_1107884035.dbf  arch1_106_1107884035.dbf  arch1_111_1107884035.dbf  arch1_114_1107884035.dbf
+arch1_101_1107884035.dbf  arch1_104_1107884035.dbf  arch1_110_1107884035.dbf  arch1_112_1107884035.dbf  arch1_115_1107884035.dbf
+[oracle@passive-cloud-server reco]$ rm -rf *
+[oracle@passive-cloud-server reco]$ ls -ltrh
+total 362M
+-rw-r----- 1 oracle oinstall 161M Jul  7 09:35 arch1_110_1107884035.dbf
+-rw-r----- 1 oracle oinstall 5.5K Jul  7 09:35 arch1_11_1107884035.dbf
+-rw-r----- 1 oracle oinstall 160M Jul  7 09:35 arch1_111_1107884035.dbf
+-rw-r----- 1 oracle oinstall  42M Jul  7 09:35 arch1_112_1107884035.dbf
+-rw-r----- 1 oracle oinstall 5.0K Jul  7 09:35 arch1_113_1107884035.dbf
+[oracle@passive-cloud-server reco]$ ls -ltrh
+total 362M
+-rw-r----- 1 oracle oinstall 161M Jul  7 09:35 arch1_110_1107884035.dbf
+-rw-r----- 1 oracle oinstall 5.5K Jul  7 09:35 arch1_11_1107884035.dbf
+-rw-r----- 1 oracle oinstall 160M Jul  7 09:35 arch1_111_1107884035.dbf
+-rw-r----- 1 oracle oinstall  42M Jul  7 09:35 arch1_112_1107884035.dbf
+-rw-r----- 1 oracle oinstall 5.0K Jul  7 09:35 arch1_113_1107884035.dbf
+-rw-r----- 1 oracle oinstall  12K Jul  7 09:35 arch1_114_1107884035.dbf
+-rw-r----- 1 oracle oinstall 6.0K Jul  7 09:35 arch1_115_1107884035.dbf
+[oracle@passive-cloud-server reco]$
+[oracle@passive-cloud-server reco]$ rm arch1_11_1107884035.dbf
+[oracle@passive-cloud-server reco]$
+[oracle@passive-cloud-server reco]$ pwd
+/opt/oracle/reco
+[oracle@passive-cloud-server reco]$ ls -ltrh
+total 362M
+-rw-r----- 1 oracle oinstall 161M Jul  7 09:35 arch1_110_1107884035.dbf
+-rw-r----- 1 oracle oinstall 160M Jul  7 09:35 arch1_111_1107884035.dbf
+-rw-r----- 1 oracle oinstall  42M Jul  7 09:35 arch1_112_1107884035.dbf
+-rw-r----- 1 oracle oinstall 5.0K Jul  7 09:35 arch1_113_1107884035.dbf
+-rw-r----- 1 oracle oinstall  12K Jul  7 09:35 arch1_114_1107884035.dbf
+-rw-r----- 1 oracle oinstall 6.0K Jul  7 09:35 arch1_115_1107884035.dbf
+[oracle@passive-cloud-server reco]$ rman target /
+
+Recovery Manager: Release 21.0.0.0.0 - Production on Thu Jul 7 09:36:50 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle and/or its affiliates.  All rights reserved.
+
+connected to target database: ORCLCDB (DBID=2878945410, not open)
+
+RMAN> catalog start with '/opt/oracle/reco/';
+
+using target database control file instead of recovery catalog
+searching for all files that match the pattern /opt/oracle/reco/
+
+List of Files Unknown to the Database
+=====================================
+File Name: /opt/oracle/reco/arch1_110_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_111_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_112_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_113_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_114_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_115_1107884035.dbf
+
+Do you really want to catalog the above files (enter YES or NO)? yes
+cataloging files...
+cataloging done
+
+List of Cataloged Files
+=======================
+File Name: /opt/oracle/reco/arch1_110_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_111_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_112_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_113_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_114_1107884035.dbf
+File Name: /opt/oracle/reco/arch1_115_1107884035.dbf
+
+RMAN> recover database;
+
+Starting recover at 07-JUL-22
+allocated channel: ORA_DISK_1
+channel ORA_DISK_1: SID=32 device type=DISK
+
+starting media recovery
+
+archived log for thread 1 with sequence 112 is already on disk as file /opt/oracle/reco/arch1_112_1107884035.dbf
+archived log for thread 1 with sequence 113 is already on disk as file /opt/oracle/reco/arch1_113_1107884035.dbf
+archived log for thread 1 with sequence 114 is already on disk as file /opt/oracle/reco/arch1_114_1107884035.dbf
+archived log for thread 1 with sequence 115 is already on disk as file /opt/oracle/reco/arch1_115_1107884035.dbf
+archived log file name=/opt/oracle/reco/arch1_112_1107884035.dbf thread=1 sequence=112
+archived log file name=/opt/oracle/reco/arch1_113_1107884035.dbf thread=1 sequence=113
+archived log file name=/opt/oracle/reco/arch1_114_1107884035.dbf thread=1 sequence=114
+archived log file name=/opt/oracle/reco/arch1_115_1107884035.dbf thread=1 sequence=115
+unable to find archived log
+archived log thread=1 sequence=116
+RMAN-00571: ===========================================================
+RMAN-00569: =============== ERROR MESSAGE STACK FOLLOWS ===============
+RMAN-00571: ===========================================================
+RMAN-03002: failure of recover command at 07/07/2022 09:38:54
+RMAN-06054: media recovery requesting unknown archived log for thread 1 with sequence 116 and starting SCN of 3400741
+
+RMAN> exit
+
+
+Recovery Manager complete.
+[oracle@passive-cloud-server reco]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 09:40:37 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> alter database open resetlogs;
+
+Database altered.
+
+SQL> !hostname
+passive-cloud-server
+
+SQL> set lines 180
+col host_name for a16
+col INSTANCE_NAME for a10
+col STATUS for a12
+SQL> SQL> SQL> SQL> col DATABASE_STATUS for a10
+col ACTIVE_STATE for a10
+col DATABASE_ROLE for a16
+SQL> col name for a10
+col open_mode for a20
+col version for a12
+col STARTUP_TIME for a20
+select host_name, INSTANCE_NAME, STATUS, LOGINS,DATABASE_STATUS, ACTIVE_STATE, NAME, DATABASE_ROLE,VERSION, OPEN_MODE,to_char(STARTUP_TIME, 'DD-MON-YY HH24:MI:SS') "STARTUP_TIME" from v$instance,v$database;
+select distinct(substr(host_name,0,14)) "HOST_NAME", INSTANCE_NAME, STATUS, LOGINS,DATABASE_STATUS, ACTIVE_STATE, NAME, DATABASE_ROLE,VERSION, OPEN_MODE,to_char(STARTUP_TIME, 'DD-MON-YY HH24:MI:SS') "STARTUP_TIME" from gv$instance,gv$database order by 2;
+SQL> SQL> SQL> SQL> SQL> SQL>
+HOST_NAME        INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE            STARTUP_TIME
+---------------- ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ -------------------- --------------------
+passive-cloud-se ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE           07-JUL-22 08:33:12
+rver
+
+
+SQL>
+HOST_NAME        INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE            STARTUP_TIME
+---------------- ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ -------------------- --------------------
+passive-cloud-   ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE           07-JUL-22 08:33:12
+
+SQL> col host_name for a25
+SQL> col open_mode for a13
+SQL> /
+
+HOST_NAME                 INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE     STARTUP_TIME
+------------------------- ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ ------------- --------------------
+passive-cloud-            ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE    07-JUL-22 08:33:12
+
+SQL>
+SQL> select host_name, INSTANCE_NAME, STATUS, LOGINS,DATABASE_STATUS, ACTIVE_STATE, NAME, DATABASE_ROLE,VERSION, OPEN_MODE,to_char(STARTUP_TIME, 'DD-MON-YY HH24:MI:SS') "STARTUP_TIME" from v$instance,v$database;
+select distinct(substr(host_name,0,14)) "HOST_NAME", INSTANCE_NAME, STATUS, LOGINS,DATABASE_STATUS, ACTIVE_STATE, NAME, DATABASE_ROLE,VERSION, OPEN_MODE,to_char(STARTUP_TIME, 'DD-MON-YY HH24:MI:SS') "STARTUP_TIME" from gv$instance,gv$database order by 2;
+
+HOST_NAME                 INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE     STARTUP_TIME
+------------------------- ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ ------------- --------------------
+passive-cloud-server      ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE    07-JUL-22 08:33:12
+
+SQL>
+HOST_NAME                 INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE     STARTUP_TIME
+------------------------- ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ ------------- --------------------
+passive-cloud-            ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE    07-JUL-22 08:33:12
+
+SQL> col host_name for a24
+SQL> select host_name, INSTANCE_NAME, STATUS, LOGINS,DATABASE_STATUS, ACTIVE_STATE, NAME, DATABASE_ROLE,VERSION, OPEN_MODE,to_char(STARTUP_TIME, 'DD-MON-YY HH24:MI:SS') "STARTUP_TIME" from v$instance,v$database;
+select distinct(substr(host_name,0,14)) "HOST_NAME", INSTANCE_NAME, STATUS, LOGINS,DATABASE_STATUS, ACTIVE_STATE, NAME, DATABASE_ROLE,VERSION, OPEN_MODE,to_char(STARTUP_TIME, 'DD-MON-YY HH24:MI:SS') "STARTUP_TIME" from gv$instance,gv$database order by 2;
+
+HOST_NAME                INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE     STARTUP_TIME
+------------------------ ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ ------------- --------------------
+passive-cloud-server     ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE    07-JUL-22 08:33:12
+
+SQL>
+HOST_NAME                INSTANCE_N STATUS       LOGINS     DATABASE_S ACTIVE_STA NAME       DATABASE_ROLE    VERSION      OPEN_MODE     STARTUP_TIME
+------------------------ ---------- ------------ ---------- ---------- ---------- ---------- ---------------- ------------ ------------- --------------------
+passive-cloud-           ORCLCDB    OPEN         ALLOWED    ACTIVE     NORMAL     ORCLCDB    PRIMARY          21.0.0.0.0   READ WRITE    07-JUL-22 08:33:12
+
+SQL>

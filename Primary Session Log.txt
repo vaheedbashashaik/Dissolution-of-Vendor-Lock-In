@@ -1,0 +1,623 @@
+login as: opc
+Authenticating with public key "rsa-key-20210912"
+Activate the web console with: systemctl enable --now cockpit.socket
+
+Last login: Wed Jul  6 11:01:47 2022 from 1.39.157.63
+[opc@primary-cloud-server ~]$ sudo su -
+Last login: Wed Jul  6 11:01:52 GMT 2022 on pts/1
+[root@primary-cloud-server ~]# su - oracle
+Last login: Wed Jul  6 11:01:55 GMT 2022 on pts/1
+[oracle@primary-cloud-server ~]$
+[oracle@primary-cloud-server ~]$
+[oracle@primary-cloud-server ~]$ cat /etc/oratab
+#
+
+
+
+# This file is used by ORACLE utilities.  It is created by root.sh
+# and updated by either Database Configuration Assistant while creating
+# a database or ASM Configuration Assistant while creating ASM instance.
+
+# A colon, ':', is used as the field terminator.  A new line terminates
+# the entry.  Lines beginning with a pound sign, '#', are comments.
+#
+# Entries are of the form:
+#   $ORACLE_SID:$ORACLE_HOME:<N|Y>:
+#
+# The first and second fields are the system identifier and home
+# directory of the database respectively.  The third field indicates
+# to the dbstart utility that the database should , "Y", or should not,
+# "N", be brought up at system boot time.
+#
+# Multiple entries with the same $ORACLE_SID are not allowed.
+#
+#
+ORCLCDB:/opt/oracle/product/21c/dbhome_1:N
+[oracle@primary-cloud-server ~]$ . oraenv
+ORACLE_SID = [oracle] ? ORCLCDB
+The Oracle base has been set to /opt/oracle
+[oracle@primary-cloud-server ~]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 08:29:03 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> show parameter core
+
+NAME                                 TYPE        VALUE
+------------------------------------ ----------- ------------------------------
+background_core_dump                 string      partial
+core_dump_dest                       string      /opt/oracle/diag/rdbms/orclcdb
+                                                 /ORCLCDB/cdump
+shadow_core_dump                     string      partial
+SQL> host
+[oracle@primary-cloud-server ~]$ cd /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/
+[oracle@primary-cloud-server trace]$ mv alert_ORCLCDB.log alert_ORCLCDB.log.bkp
+[oracle@primary-cloud-server trace]$ ls alert_ORCLCDB.log
+ls: cannot access 'alert_ORCLCDB.log': No such file or directory
+[oracle@primary-cloud-server trace]$ sqlplus / as sysdba
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu Jul 7 08:39:57 2022
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+
+Connected to:
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3364401
+        19 3364401
+        20 3364401
+        21 3364401
+        22 3364401
+        23 3364401
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3364401
+
+23 rows selected.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3394655
+        19 3394658
+        20 3394665
+        21 3394672
+        22 3394675
+        23 3394679
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3394709
+
+23 rows selected.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3394655
+        19 3394658
+        20 3394665
+        21 3394672
+        22 3394675
+        23 3394679
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3394709
+
+23 rows selected.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3394655
+        19 3394658
+        20 3394665
+        21 3394672
+        22 3394675
+        23 3394679
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3394709
+
+23 rows selected.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3394655
+        19 3394658
+        20 3394665
+        21 3394672
+        22 3394675
+        23 3394679
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3394709
+
+23 rows selected.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3394388
+         3 3394425
+         4 3394435
+         5 2651836
+         6 2651836
+         7 3394471
+         8 2651836
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3394556
+        14 3394563
+        15 3394601
+        16 3394604
+        17 3394611
+        18 3394655
+        19 3394658
+        20 3394665
+        21 3394672
+        22 3394675
+        23 3394679
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3394709
+
+23 rows selected.
+
+SQL> alter session set container =ORCLPDB1;
+
+Session altered.
+
+SQL> create table test1.t as select * from dba_users;
+
+Table created.
+
+SQL> create table test1.t2 as select * from dba_tables;
+
+Table created.
+
+SQL> delete from test1.t2;
+
+2350 rows deleted.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         9 3394474
+        10 3394481
+        11 3394537
+        12 3394554
+
+SQL> conn / as sysdba
+Connected.
+SQL> alter system checkpoint;
+
+System altered.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3398574
+         3 3398574
+         4 3398574
+         5 2651836
+         6 2651836
+         7 3398574
+         8 2651836
+         9 3398574
+        10 3398574
+        11 3398574
+        12 3398574
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3398574
+        14 3398574
+        15 3398574
+        16 3398574
+        17 3398574
+        18 3398574
+        19 3398574
+        20 3398574
+        21 3398574
+        22 3398574
+        23 3398574
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3398574
+
+23 rows selected.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3398574
+         3 3398574
+         4 3398574
+         5 2651836
+         6 2651836
+         7 3398574
+         8 2651836
+         9 3398574
+        10 3398574
+        11 3398574
+        12 3398574
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3398574
+        14 3398574
+        15 3398574
+        16 3398574
+        17 3398574
+        18 3398574
+        19 3398574
+        20 3398574
+        21 3398574
+        22 3398574
+        23 3398574
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3398574
+
+23 rows selected.
+
+SQL>  select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3398802
+         3 3398804
+         4 3398806
+         5 2651836
+         6 2651836
+         7 3398809
+         8 2651836
+         9 3398812
+        10 3398814
+        11 3398816
+        12 3398819
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3398821
+        14 3398847
+        15 3398849
+        16 3398851
+        17 3398853
+        18 3398856
+        19 3398858
+        20 3398861
+        21 3398863
+        22 3398866
+        23 3398868
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3398871
+
+23 rows selected.
+
+SQL> alter session set container =ORCLPDB1;
+
+Session altered.
+
+SQL> delete from test1.t;
+
+38 rows deleted.
+
+SQL> drop table test1.t2;
+
+Table dropped.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         9 3398812
+        10 3398814
+        11 3398816
+        12 3398819
+
+SQL> conn / as sysdba
+Connected.
+SQL> alter system checkponint;
+alter system checkponint
+             *
+ERROR at line 1:
+ORA-02065: illegal option for ALTER SYSTEM
+
+
+SQL> alter system checkpoint;
+
+System altered.
+
+SQL> select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3400223
+         3 3400223
+         4 3400223
+         5 2651836
+         6 2651836
+         7 3400223
+         8 2651836
+         9 3400223
+        10 3400223
+        11 3400223
+        12 3400223
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3400223
+        14 3400223
+        15 3400223
+        16 3400223
+        17 3400223
+        18 3400223
+        19 3400223
+        20 3400223
+        21 3400223
+        22 3400223
+        23 3400223
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3400223
+
+23 rows selected.
+
+SQL>  select HXFIL File_num,fhscn from x$kcvfh;
+
+  FILE_NUM FHSCN
+---------- --------------------
+         1 3400304
+         3 3400306
+         4 3400309
+         5 2651836
+         6 2651836
+         7 3400311
+         8 2651836
+         9 3400313
+        10 3400316
+        11 3400318
+        12 3400320
+
+  FILE_NUM FHSCN
+---------- --------------------
+        13 3400323
+        14 3400325
+        15 3400327
+        16 3400330
+        17 3400332
+        18 3400334
+        19 3400337
+        20 3400339
+        21 3400342
+        22 3400344
+        23 3400346
+
+  FILE_NUM FHSCN
+---------- --------------------
+        24 3400349
+
+23 rows selected.
+
+SQL> !hostname
+primary-cloud-server
+
+SQL> alter system checkpoint;
+
+System altered.
+
+SQL> alter system switch logfile;
+
+System altered.
+
+SQL> /
+
+System altered.
+
+SQL> /
+/
+System altered.
+
+SQL>
+
+System altered.
+
+SQL>
+SQL>
+SQL> host
+[oracle@primary-cloud-server trace]$ scp *arch1_* 10.0.0.213:/opt/oracle/reco/.^C
+[oracle@primary-cloud-server trace]$ exit
+exit
+
+SQL> archive log list
+Database log mode              Archive Mode
+Automatic archival             Enabled
+Archive destination            /opt/oracle/homes/OraDBHome21cEE/dbs/arch
+Oldest online log sequence     114
+Next log sequence to archive   116
+Current log sequence           116
+SQL> host
+[oracle@primary-cloud-server trace]$ cd /opt/oracle/homes/OraDBHome21cEE/dbs
+[oracle@primary-cloud-server dbs]$ ls *11*
+arch1_100_1107884035.dbf  arch1_13_1107884035.dbf  arch1_32_1107884035.dbf  arch1_51_1107884035.dbf  arch1_69_1107884035.dbf  arch1_86_1107884035.dbf
+arch1_10_1107884035.dbf   arch1_14_1107884035.dbf  arch1_33_1107884035.dbf  arch1_52_1107884035.dbf  arch1_70_1107884035.dbf  arch1_87_1107884035.dbf
+arch1_101_1107884035.dbf  arch1_15_1107884035.dbf  arch1_34_1107884035.dbf  arch1_53_1107884035.dbf  arch1_7_1107884035.dbf   arch1_88_1107884035.dbf
+arch1_102_1107884035.dbf  arch1_16_1107884035.dbf  arch1_35_1107884035.dbf  arch1_54_1107884035.dbf  arch1_71_1107884035.dbf  arch1_89_1107884035.dbf
+arch1_103_1107884035.dbf  arch1_17_1107884035.dbf  arch1_36_1107884035.dbf  arch1_55_1107884035.dbf  arch1_72_1107884035.dbf  arch1_90_1107884035.dbf
+arch1_104_1107884035.dbf  arch1_18_1107884035.dbf  arch1_37_1107884035.dbf  arch1_56_1107884035.dbf  arch1_73_1107884035.dbf  arch1_9_1107884035.dbf
+arch1_105_1107884035.dbf  arch1_19_1107884035.dbf  arch1_38_1107884035.dbf  arch1_57_1107884035.dbf  arch1_74_1107884035.dbf  arch1_91_1107884035.dbf
+arch1_106_1107884035.dbf  arch1_20_1107884035.dbf  arch1_39_1107884035.dbf  arch1_58_1107884035.dbf  arch1_75_1107884035.dbf  arch1_92_1107884035.dbf
+arch1_107_1107884035.dbf  arch1_21_1107884035.dbf  arch1_40_1107884035.dbf  arch1_59_1107884035.dbf  arch1_76_1107884035.dbf  arch1_93_1107884035.dbf
+arch1_108_1107884035.dbf  arch1_22_1107884035.dbf  arch1_41_1107884035.dbf  arch1_60_1107884035.dbf  arch1_77_1107884035.dbf  arch1_94_1107884035.dbf
+arch1_109_1107884035.dbf  arch1_23_1107884035.dbf  arch1_42_1107884035.dbf  arch1_6_1107884035.dbf   arch1_78_1107884035.dbf  arch1_95_1107884035.dbf
+arch1_110_1107884035.dbf  arch1_24_1107884035.dbf  arch1_43_1107884035.dbf  arch1_61_1107884035.dbf  arch1_79_1107884035.dbf  arch1_96_1107884035.dbf
+arch1_11_1107884035.dbf   arch1_25_1107884035.dbf  arch1_44_1107884035.dbf  arch1_62_1107884035.dbf  arch1_80_1107884035.dbf  arch1_97_1107884035.dbf
+arch1_111_1107884035.dbf  arch1_26_1107884035.dbf  arch1_45_1107884035.dbf  arch1_63_1107884035.dbf  arch1_8_1107884035.dbf   arch1_98_1107884035.dbf
+arch1_112_1107884035.dbf  arch1_27_1107884035.dbf  arch1_46_1107884035.dbf  arch1_64_1107884035.dbf  arch1_81_1107884035.dbf  arch1_99_1107884035.dbf
+arch1_113_1107884035.dbf  arch1_28_1107884035.dbf  arch1_47_1107884035.dbf  arch1_65_1107884035.dbf  arch1_82_1107884035.dbf
+arch1_114_1107884035.dbf  arch1_29_1107884035.dbf  arch1_48_1107884035.dbf  arch1_66_1107884035.dbf  arch1_83_1107884035.dbf
+arch1_115_1107884035.dbf  arch1_30_1107884035.dbf  arch1_49_1107884035.dbf  arch1_67_1107884035.dbf  arch1_84_1107884035.dbf
+arch1_12_1107884035.dbf   arch1_31_1107884035.dbf  arch1_50_1107884035.dbf  arch1_68_1107884035.dbf  arch1_85_1107884035.dbf
+[oracle@primary-cloud-server dbs]$ ls arch1_11*
+arch1_110_1107884035.dbf  arch1_111_1107884035.dbf  arch1_113_1107884035.dbf  arch1_115_1107884035.dbf
+arch1_11_1107884035.dbf   arch1_112_1107884035.dbf  arch1_114_1107884035.dbf
+[oracle@primary-cloud-server dbs]$ scp arch1_11* 10.0.0.213:/opt/oracle/reco/.
+arch1_110_1107884035.dbf                                                                                                              100%  160MB  70.6MB/s   00:02
+arch1_11_1107884035.dbf                                                                                                               100% 5632    11.6KB/s   00:00
+arch1_111_1107884035.dbf                                                                                                              100%  159MB  92.5MB/s   00:01
+arch1_112_1107884035.dbf                                                                                                              100%   42MB  65.7MB/s   00:00
+arch1_113_1107884035.dbf                                                                                                              100% 5120     3.7MB/s   00:00
+arch1_114_1107884035.dbf                                                                                                              100%   12KB   8.7MB/s   00:00
+arch1_115_1107884035.dbf                                                                                                              100% 6144     4.8MB/s   00:00
+[oracle@primary-cloud-server dbs]$  scp arch1_11* 10.0.0.213:/opt/oracle/reco/.
+arch1_110_1107884035.dbf                                                                                                              100%  160MB  85.8MB/s   00:01
+arch1_11_1107884035.dbf                                                                                                               100% 5632     3.4MB/s   00:00
+arch1_111_1107884035.dbf                                                                                                              100%  159MB  71.0MB/s   00:02
+arch1_112_1107884035.dbf                                                                                                              100%   42MB  65.9MB/s   00:00
+arch1_113_1107884035.dbf                                                                                                              100% 5120    75.9KB/s   00:00
+arch1_114_1107884035.dbf                                                                                                              100%   12KB 166.0KB/s   00:00
+arch1_115_1107884035.dbf                                                                                                              100% 6144    15.7KB/s   00:00
+[oracle@primary-cloud-server dbs]$

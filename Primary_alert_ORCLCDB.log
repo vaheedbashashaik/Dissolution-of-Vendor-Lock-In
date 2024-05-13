@@ -1,0 +1,144 @@
+2022-07-07T08:35:43.831944+00:00
+TABLE AUDSYS.AUD$UNIFIED: ADDED INTERVAL PARTITION SYS_P389 (2929) VALUES LESS THAN (TIMESTAMP' 2022-07-08 00:00:00')
+2022-07-07T09:04:52.535571+00:00
+ORCLPDB1(3):TABLE AUDSYS.AUD$UNIFIED: ADDED INTERVAL PARTITION SYS_P364 (2929) VALUES LESS THAN (TIMESTAMP' 2022-07-08 00:00:00')
+2022-07-07T09:29:18.779707+00:00
+Thread 1 advanced to log sequence 113 (LGWR switch),  current SCN: 3400705
+  Current log# 2 seq# 113 mem# 0: /opt/oracle/oradata/ORCLCDB/redo02.log
+2022-07-07T09:29:18.915426+00:00
+ARC1 (PID:3726): Archived Log entry 107 added for B-1107884035.T-1.S-112 ID 0x7fa2ab993482 LAD:1 [krse.c:4933]
+2022-07-07T09:29:19.842234+00:00
+Thread 1 advanced to log sequence 114 (LGWR switch),  current SCN: 3400714
+  Current log# 3 seq# 114 mem# 0: /opt/oracle/oradata/ORCLCDB/redo03.log
+2022-07-07T09:29:19.847990+00:00
+ARC2 (PID:3728): Archived Log entry 108 added for B-1107884035.T-1.S-113 ID 0x7f9bab993482 LAD:1 [krse.c:4933]
+2022-07-07T09:29:20.794371+00:00
+Thread 1 cannot allocate new log, sequence 115
+Checkpoint not complete
+  Current log# 3 seq# 114 mem# 0: /opt/oracle/oradata/ORCLCDB/redo03.log
+2022-07-07T09:29:23.231224+00:00
+Thread 1 advanced to log sequence 115 (LGWR switch),  current SCN: 3400732
+  Current log# 1 seq# 115 mem# 0: /opt/oracle/oradata/ORCLCDB/redo01.log
+2022-07-07T09:29:23.237313+00:00
+ARC3 (PID:3730): Archived Log entry 109 added for B-1107884035.T-1.S-114 ID 0x7f29ab993482 LAD:1 [krse.c:4933]
+2022-07-07T09:29:24.440897+00:00
+Thread 1 cannot allocate new log, sequence 116
+Checkpoint not complete
+  Current log# 1 seq# 115 mem# 0: /opt/oracle/oradata/ORCLCDB/redo01.log
+2022-07-07T09:29:26.335036+00:00
+Thread 1 advanced to log sequence 116 (LGWR switch),  current SCN: 3400741
+  Current log# 2 seq# 116 mem# 0: /opt/oracle/oradata/ORCLCDB/redo02.log
+2022-07-07T09:29:26.340848+00:00
+ARC0 (PID:3722): Archived Log entry 110 added for B-1107884035.T-1.S-115 ID 0x7f57ab993482 LAD:1 [krse.c:4933]
+2022-07-07T11:00:34.055647+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 768000K, new size 778240K
+2022-07-07T12:35:50.438560+00:00
+ORCLPDB1(3):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P371 (3) VALUES LESS THAN (298)
+2022-07-07T16:01:45.238949+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 778240K, new size 788480K
+2022-07-07T16:50:59.887643+00:00
+TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P396 (4) VALUES LESS THAN (394)
+2022-07-07T22:00:00.026593+00:00
+Setting Resource Manager plan SCHEDULER[0x52C1]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager CDB plan DEFAULT_MAINTENANCE_PLAN via parameter
+ORCLPDB1(3):Setting Resource Manager plan SCHEDULER[0x52BE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+ORCLPDB1(3):Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+DBWR(4):Setting Resource Manager plan SCHEDULER[0x52BE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+DBWR(4):Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+VENDOR_READ(5):Setting Resource Manager plan SCHEDULER[0x52BE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+VENDOR_READ(5):Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+VENDOR_WRITE(6):Setting Resource Manager plan SCHEDULER[0x52BE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+VENDOR_WRITE(6):Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+VENDOR_WRITE1(7):Setting Resource Manager plan SCHEDULER[0x52BE]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+VENDOR_WRITE1(7):Setting Resource Manager plan DEFAULT_MAINTENANCE_PLAN via parameter
+2022-07-07T22:00:01.156671+00:00
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+2022-07-07T22:00:08.966379+00:00
+ORCLPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P372 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+ORCLPDB1(3):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P375 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:00:09.068775+00:00
+TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P397 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P400 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:00:36.306956+00:00
+Resize operation completed for file# 1, fname /opt/oracle/oradata/ORCLCDB/system01.dbf, old size 1372160K, new size 1382400K
+2022-07-07T22:00:39.685611+00:00
+Thread 1 cannot allocate new log, sequence 117
+Private strand flush not complete
+  Current log# 2 seq# 116 mem# 0: /opt/oracle/oradata/ORCLCDB/redo02.log
+2022-07-07T22:00:42.704107+00:00
+Thread 1 advanced to log sequence 117 (LGWR switch),  current SCN: 3505287
+  Current log# 3 seq# 117 mem# 0: /opt/oracle/oradata/ORCLCDB/redo03.log
+2022-07-07T22:00:44.442917+00:00
+ARC1 (PID:3726): Archived Log entry 111 added for B-1107884035.T-1.S-116 ID 0x7fa2ab993482 LAD:1 [krse.c:4933]
+2022-07-07T22:03:11.206825+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 788480K, new size 798720K
+2022-07-07T22:03:21.696477+00:00
+DBWR(4):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P368 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+DBWR(4):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P371 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:03:22.093553+00:00
+VENDOR_READ(5):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P361 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+VENDOR_READ(5):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P364 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:03:27.309476+00:00
+DBWR(4):Resize operation completed for file# 13, fname /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf, old size 286720K, new size 296960K
+2022-07-07T22:03:28.336572+00:00
+VENDOR_READ(5):Resize operation completed for file# 16, fname /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf, old size 286720K, new size 296960K
+2022-07-07T22:13:13.579906+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 798720K, new size 819200K
+2022-07-07T22:13:24.729117+00:00
+VENDOR_WRITE(6):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P361 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+VENDOR_WRITE(6):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P364 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:13:27.587639+00:00
+VENDOR_WRITE1(7):TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P361 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+VENDOR_WRITE1(7):TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P364 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:13:31.933679+00:00
+VENDOR_WRITE(6):Resize operation completed for file# 19, fname /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf, old size 286720K, new size 296960K
+2022-07-07T22:13:33.391289+00:00
+VENDOR_WRITE1(7):Resize operation completed for file# 22, fname /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf, old size 286720K, new size 296960K
+2022-07-07T22:22:25.290620+00:00
+Thread 1 cannot allocate new log, sequence 118
+Private strand flush not complete
+  Current log# 3 seq# 117 mem# 0: /opt/oracle/oradata/ORCLCDB/redo03.log
+2022-07-07T22:22:28.334828+00:00
+Thread 1 advanced to log sequence 118 (LGWR switch),  current SCN: 3567425
+  Current log# 1 seq# 118 mem# 0: /opt/oracle/oradata/ORCLCDB/redo01.log
+2022-07-07T22:22:29.851428+00:00
+ARC2 (PID:3728): Archived Log entry 112 added for B-1107884035.T-1.S-117 ID 0x7f9bab993482 LAD:1 [krse.c:4933]
+2022-07-07T22:23:16.098513+00:00
+DBWR(4):Resize operation completed for file# 14, fname /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf, old size 399360K, new size 409600K
+2022-07-07T22:23:16.099294+00:00
+VENDOR_WRITE1(7):Resize operation completed for file# 23, fname /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf, old size 399360K, new size 409600K
+2022-07-08T01:03:54.121611+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 819200K, new size 829440K
+2022-07-08T02:00:00.051434+00:00
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager CDB plan via parameter
+ORCLPDB1(3):Closing scheduler window
+ORCLPDB1(3):Closing Resource Manager plan via scheduler window
+ORCLPDB1(3):Clearing Resource Manager plan via parameter
+DBWR(4):Closing scheduler window
+DBWR(4):Closing Resource Manager plan via scheduler window
+DBWR(4):Clearing Resource Manager plan via parameter
+VENDOR_READ(5):Closing scheduler window
+VENDOR_READ(5):Closing Resource Manager plan via scheduler window
+VENDOR_READ(5):Clearing Resource Manager plan via parameter
+VENDOR_WRITE(6):Closing scheduler window
+VENDOR_WRITE(6):Closing Resource Manager plan via scheduler window
+VENDOR_WRITE(6):Clearing Resource Manager plan via parameter
+VENDOR_WRITE1(7):Closing scheduler window
+VENDOR_WRITE1(7):Closing Resource Manager plan via scheduler window
+VENDOR_WRITE1(7):Clearing Resource Manager plan via parameter
+2022-07-08T02:06:21.225595+00:00
+VENDOR_WRITE(6):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P365 (3) VALUES LESS THAN (298)
+VENDOR_WRITE1(7):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P365 (3) VALUES LESS THAN (298)
+2022-07-08T02:59:27.512624+00:00
+TABLE SYS.WRP$_REPORTS: ADDED INTERVAL PARTITION SYS_P413 (4572) VALUES LESS THAN (TO_DATE(' 2022-07-09 01:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRP$_REPORTS_DETAILS: ADDED INTERVAL PARTITION SYS_P414 (4572) VALUES LESS THAN (TO_DATE(' 2022-07-09 01:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRP$_REPORTS_TIME_BANDS: ADDED INTERVAL PARTITION SYS_P417 (4571) VALUES LESS THAN (TO_DATE(' 2022-07-08 01:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-08T05:51:28.974507+00:00
+DBWR(4):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P372 (3) VALUES LESS THAN (298)
+2022-07-08T06:51:31.189670+00:00
+VENDOR_READ(5):TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P365 (3) VALUES LESS THAN (298)
+2022-07-08T07:05:19.308573+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 829440K, new size 839680K

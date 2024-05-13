@@ -1,0 +1,1231 @@
+2022-07-07T08:31:54.209997+00:00
+Shutting down ORACLE instance (immediate) (OS id: 284089)
+Shutdown is initiated by sqlplus@passive-cloud-server (TNS V1-V3).
+Stopping background process SMCO
+Shutting down instance: further logons disabled
+2022-07-07T08:31:54.390940+00:00
+Stopping background process CJQ0
+2022-07-07T08:31:54.458862+00:00
+Process termination requested for pid 43520 [source = rdbms], [info = 2] [request issued by pid: 43514, uid: 54321]
+Stopping background process MMNL
+Stopping background process MMON
+alter pluggable database all close immediate
+Completed: alter pluggable database all close immediate
+2022-07-07T08:31:54.656860+00:00
+PDB$SEED(2):Pluggable database PDB$SEED closing
+PDB$SEED(2):JIT: pid 284089 requesting stop
+PDB$SEED(2):Buffer Cache flush deferred for PDB 2
+License high water mark = 6
+Dispatchers and shared servers shutdown
+
+Data Pump shutdown in progress
+ALTER DATABASE CLOSE NORMAL
+Stopping Emon pool
+alter pluggable database all close immediate
+Completed: alter pluggable database all close immediate
+alter pluggable database all close immediate
+Completed: alter pluggable database all close immediate
+
+IM on ADG: Start of Empty Journal 
+
+IM on ADG: End of Empty Journal 
+Stopping background process RCBG
+Stopping Emon pool
+Shutting down blockchain Apply - must do a restart blockchain after this.
+Closing sequence subsystem (79023429648).
+Stopping change tracking
+2022-07-07T08:31:56.136177+00:00
+Thread 1 closed at log sequence 1
+Successful close of redo thread 1
+2022-07-07T08:31:56.138623+00:00
+Entire Buffer Cache invalidation started
+Entire Buffer Cache invalidation completed
+Completed: ALTER DATABASE CLOSE NORMAL
+ALTER DATABASE DISMOUNT
+Completed: ALTER DATABASE DISMOUNT
+JIT: pid 284089 requesting stop
+2022-07-07T08:31:56.826069+00:00
+Stopping background process VKTM
+2022-07-07T08:31:56.926222+00:00
+JIT: pid 284089 requesting stop
+2022-07-07T08:31:57.607811+00:00
+Instance shutdown complete (OS id: 284089)
+2022-07-07T08:33:12.621547+00:00
+Starting ORACLE instance (normal) (OS id: 284436)
+2022-07-07T08:33:12.627729+00:00
+****************************************************
+ Sys-V shared memory will be used for creating SGA 
+ ****************************************************
+2022-07-07T08:33:12.628376+00:00
+**********************************************************************
+2022-07-07T08:33:12.628438+00:00
+Dump of system resources acquired for SHARED GLOBAL AREA (SGA) 
+
+2022-07-07T08:33:12.628573+00:00
+ Per process system memlock (soft) limit = 128G
+2022-07-07T08:33:12.628632+00:00
+ Expected per process system memlock (soft) limit to lock
+ instance MAX SHARED GLOBAL AREA (SGA) into memory: 2002M
+2022-07-07T08:33:12.628740+00:00
+ Available system pagesizes:
+  4K, 2048K 
+2022-07-07T08:33:12.628842+00:00
+ Supported system pagesize(s):
+2022-07-07T08:33:12.628919+00:00
+  PAGESIZE  AVAILABLE_PAGES  EXPECTED_PAGES  ALLOCATED_PAGES  ERROR(s)
+2022-07-07T08:33:12.629000+00:00
+        4K       Configured               6        On-Demand        NONE
+2022-07-07T08:33:12.629115+00:00
+     2048K                0            1001        On-Demand        NONE
+2022-07-07T08:33:12.629175+00:00
+RECOMMENDATION:
+2022-07-07T08:33:12.629231+00:00
+ 1. For optimal performance, configure system with expected number 
+ of pages for every supported system pagesize prior to the next 
+ instance restart operation.
+2022-07-07T08:33:12.635906+00:00
+**********************************************************************
+Using an SGA granule size of 16MB
+Memory protection keys NOT enabled.
+LICENSE_MAX_SESSION = 0
+LICENSE_SESSIONS_WARNING = 0
+Initial number of CPU is 2
+Number of processor cores in the system is 1
+Number of processor sockets in the system is 1
+Capability Type : Network 
+capabilities requested : F detected : 0 Simulated : 0
+Capability Type : Runtime Environment 
+capabilities requested : 400000FF detected : 40000000 Simulated : 0
+Capability Type : Engineered Systems 
+capabilities requested : F detected : 0 Simulated : 0
+Capability Type : Database Test 
+capabilities requested : 3 detected : 0 Simulated : 0
+Capability Type : Database Editions 
+capabilities requested : 1CC detected : 8 Simulated : 0
+Using LOG_ARCHIVE_DEST_1 parameter default value as /opt/oracle/homes/OraDBHome21cEE/dbs/arch
+Autotune of undo retention is turned on. 
+IMODE=BR
+ILAT =51
+LICENSE_MAX_USERS = 0
+SYS auditing is enabled
+NOTE: remote asm mode is local (mode 0x1; from cluster type)
+NOTE: Using default ASM root directory ASM
+NOTE: remote asm mode is local (mode 0x1; from cluster type)
+NOTE: Cluster configuration type = NONE [2]
+NOTE: initializing MDS service with 1 containers
+Oracle Database 21c Enterprise Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0.
+ORACLE_HOME:    /opt/oracle/product/21c/dbhome_1
+System name:	Linux
+Node name:	passive-cloud-server
+Release:	5.4.17-2136.307.3.1.el8uek.x86_64
+Version:	#2 SMP Mon May 9 17:29:47 PDT 2022
+Machine:	x86_64
+VM name:	KVM CPUID feature flags: 0x01003afb
+Using parameter settings in server-side spfile /opt/oracle/dbs/spfileORCLCDB.ora
+System parameters with non-default values:
+  processes                = 300
+  nls_language             = "AMERICAN"
+  nls_territory            = "AMERICA"
+  sga_target               = 2000M
+  control_files            = "/opt/oracle/oradata/ORCLCDB/control01.ctl"
+  control_files            = "/opt/oracle/oradata/ORCLCDB/control02.ctl"
+  db_block_size            = 8192
+  compatible               = "21.0.0"
+  undo_tablespace          = "UNDOTBS1"
+  remote_login_passwordfile= "EXCLUSIVE"
+  dispatchers              = "(PROTOCOL=TCP) (SERVICE=ORCLCDBXDB)"
+  local_listener           = "LISTENER_ORCLCDB"
+  audit_file_dest          = "/opt/oracle/admin/ORCLCDB/adump"
+  audit_trail              = "DB"
+  db_name                  = "ORCLCDB"
+  open_cursors             = 300
+  pga_aggregate_target     = 665M
+  diagnostic_dest          = "/opt/oracle"
+  enable_pluggable_database= TRUE
+2022-07-07T08:33:13.034060+00:00
+Oracle instance running with ODM in SGA: FSDirect ODM Library Version 1.0 
+Broadcast on commit is enabled and is using Message mode.
+Starting background process PMON
+2022-07-07T08:33:13.067903+00:00
+PMON started with pid=2, OS id=284446 
+Starting background process CLMN
+2022-07-07T08:33:13.085693+00:00
+CLMN started with pid=3, OS id=284450 
+Starting background process PSP0
+2022-07-07T08:33:13.103679+00:00
+PSP0 started with pid=4, OS id=284454 
+Starting background process VKTM
+2022-07-07T08:33:13.152545+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_vktm_284458.trc  (incident=43260) (PDBNAME=CDB$ROOT):
+ORA-00800: soft external error, arguments: [Set Priority Failed], [VKTM], [Check traces and OS configuration], [Check Oracle document and MOS notes], []
+Incident details in: /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/incident/incdir_43260/ORCLCDB_vktm_284458_i43260.trc
+2022-07-07T08:33:13.154375+00:00
+Error attempting to elevate VKTM's priority: no further priority changes will be attempted for this process
+VKTM started with pid=5, OS id=284458 
+Starting background process GEN0
+VKTM running at (100ms) precision 
+Starting background process MMAN
+2022-07-07T08:33:13.217790+00:00
+GEN0 started with pid=6, OS id=284464 
+2022-07-07T08:33:13.235124+00:00
+MMAN started with pid=7, OS id=284468 
+Starting background process GEN1
+Starting background process GEN2
+Starting background process VOSD
+Starting background process DIAG
+Starting background process OFSD
+Starting background process DBRM
+Starting background process VKRM
+Starting background process SVCB
+Starting background process PMAN
+Starting background process DIA0
+Starting background process DBW0
+Starting background process LGWR
+Starting background process CKPT
+Starting background process SMON
+Starting background process SMCO
+Starting background process RECO
+Starting background process LREG
+Starting background process PXMN
+Starting background process FENC
+Starting background process MMON
+Starting background process MMNL
+2022-07-07T08:33:13.308117+00:00
+GEN1 started with pid=9, OS id=284474_284478 
+2022-07-07T08:33:13.313642+00:00
+GEN2 started with pid=11, OS id=284476 
+2022-07-07T08:33:13.382504+00:00
+VOSD started with pid=12, OS id=284481 
+2022-07-07T08:33:13.391623+00:00
+DIAG started with pid=13, OS id=284483 
+2022-07-07T08:33:13.415228+00:00
+VKRM started with pid=17, OS id=284490 
+2022-07-07T08:33:13.437716+00:00
+OFSD started with pid=14, OS id=284485_284499 
+2022-07-07T08:33:13.441023+00:00
+Oracle running with ofslib:'Oracle File Server Library' version=2 inc=1
+2022-07-07T08:33:13.450713+00:00
+DBRM started with pid=16, OS id=284487 
+2022-07-07T08:33:13.462230+00:00
+SVCB started with pid=18, OS id=284493 
+2022-07-07T08:33:13.510212+00:00
+DIA0 started with pid=20, OS id=284497 
+2022-07-07T08:33:13.513735+00:00
+PMAN started with pid=19, OS id=284495 
+2022-07-07T08:33:13.567480+00:00
+CKPT started with pid=23, OS id=284506 
+2022-07-07T08:33:13.581750+00:00
+RECO started with pid=26, OS id=284514 
+2022-07-07T08:33:13.610549+00:00
+DBW0 started with pid=21, OS id=284502 
+2022-07-07T08:33:13.618368+00:00
+SMCO started with pid=25, OS id=284512 
+2022-07-07T08:33:13.629580+00:00
+SMON started with pid=24, OS id=284508 
+2022-07-07T08:33:13.658241+00:00
+MMON started with pid=30, OS id=284530 
+2022-07-07T08:33:13.660935+00:00
+PXMN started with pid=28, OS id=284523 
+2022-07-07T08:33:13.669687+00:00
+FENC started with pid=29, OS id=284526 
+2022-07-07T08:33:13.686392+00:00
+LREG started with pid=27, OS id=284520 
+2022-07-07T08:33:13.700321+00:00
+MMNL started with pid=31, OS id=284534 
+2022-07-07T08:33:13.720050+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_lgwr_284504.trc  (incident=43396) (PDBNAME=CDB$ROOT):
+ORA-00800: soft external error, arguments: [Set Priority Failed], [LGWR], [Check traces and OS configuration], [Check Oracle document and MOS notes], []
+Incident details in: /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/incident/incdir_43396/ORCLCDB_lgwr_284504_i43396.trc
+2022-07-07T08:33:13.723283+00:00
+Error attempting to elevate LGWR's priority: no further priority changes will be attempted for this process
+2022-07-07T08:33:13.803175+00:00
+starting up 1 dispatcher(s) for network address '(ADDRESS=(PARTIAL=YES)(PROTOCOL=TCP))'...
+LGWR started with pid=22, OS id=284504 
+starting up 1 shared server(s) ...
+2022-07-07T08:33:13.904137+00:00
+LGWR slave LG00 created with pid=42, OS pid=284556
+Starting background process TMON
+2022-07-07T08:33:13.927771+00:00
+RACD notifier running level=0
+2022-07-07T08:33:13.927780+00:00
+TMON started with pid=43, OS id=284558 
+ORACLE_BASE from environment = /opt/oracle
+2022-07-07T08:33:14.052221+00:00
+LGWR slave LG01 created with pid=45, OS pid=284563
+2022-07-07T08:33:16.459185+00:00
+Using default pga_aggregate_limit of 2048 MB
+2022-07-07T08:35:45.171355+00:00
+No controlfile conversion
+No controlfile conversion
+2022-07-07T08:36:30.580425+00:00
+alter database mount
+2022-07-07T08:36:30.613048+00:00
+.... (PID:284564): RT: Role transition work is not done [kcrr.c:2485]
+2022-07-07T08:36:30.641923+00:00
+Successful mount of redo thread 1, with mount id 2880458382
+2022-07-07T08:36:30.642378+00:00
+Database mounted in Exclusive Mode
+Lost write protection disabled
+Completed: alter database mount
+2022-07-07T08:36:48.487387+00:00
+Starting background process ARC0
+2022-07-07T08:36:48.501373+00:00
+ARC0 started with pid=48, OS id=285311 
+Starting background process ARC1
+2022-07-07T08:36:48.514585+00:00
+ARC1 started with pid=49, OS id=285313 
+Starting background process ARC2
+2022-07-07T08:36:48.527521+00:00
+ARC2 started with pid=50, OS id=285315 
+Starting background process ARC3
+2022-07-07T08:36:48.541146+00:00
+ARC3 started with pid=51, OS id=285317 
+2022-07-07T08:37:01.228116+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 1: '/opt/oracle/oradata/ORCLCDB/system01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/system01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:01.493162+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 3: '/opt/oracle/oradata/ORCLCDB/sysaux01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/sysaux01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:01.748454+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 4: '/opt/oracle/oradata/ORCLCDB/undotbs01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/undotbs01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:01.989105+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 5: '/opt/oracle/oradata/ORCLCDB/pdbseed/system01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/pdbseed/system01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:02.214148+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 6: '/opt/oracle/oradata/ORCLCDB/pdbseed/sysaux01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/pdbseed/sysaux01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:02.445479+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 7: '/opt/oracle/oradata/ORCLCDB/users01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/users01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:02.682862+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 8: '/opt/oracle/oradata/ORCLCDB/pdbseed/undotbs01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/pdbseed/undotbs01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:03.559964+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 9: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:03.782700+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 10: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:03.964551+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 11: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:04.205219+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 12: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:04.453702+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 13: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:05.264745+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 14: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:06.876304+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 15: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:11.970547+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 16: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:21.977031+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 17: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:30.816254+00:00
+Full restore complete of datafile 1 /opt/oracle/oradata/ORCLCDB/system01.dbf.  Elapsed time: 0:00:29
+  checkpoint is 3394388
+  last deallocation scn is 2648002
+  Undo Optimization current scn is 3392111
+2022-07-07T08:37:30.842014+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 18: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:31.066347+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 19: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:31.277463+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 20: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:31.438408+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 21: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:31.620940+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 22: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:31.828544+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 23: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T08:37:32.069038+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_285415.trc:
+ORA-01110: data file 24: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf'
+ORA-01565: error in identifying file '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+Checker run found 24 new persistent data failures
+2022-07-07T08:37:53.725279+00:00
+Full restore complete of datafile 3 /opt/oracle/oradata/ORCLCDB/sysaux01.dbf.  Elapsed time: 0:00:16
+  checkpoint is 3394425
+  last deallocation scn is 2974554
+2022-07-07T08:38:03.190698+00:00
+Full restore complete of datafile 4 /opt/oracle/oradata/ORCLCDB/undotbs01.dbf.  Elapsed time: 0:00:01
+  checkpoint is 3394435
+  last deallocation scn is 3370748
+  Undo Optimization current scn is 3392154
+2022-07-07T08:38:11.782583+00:00
+PDB$SEED(2):Full restore complete of datafile 5 /opt/oracle/oradata/ORCLCDB/pdbseed/system01.dbf.  Elapsed time: 0:00:06
+PDB$SEED(2):  checkpoint is 2651836
+PDB$SEED(2):  last deallocation scn is 2650467
+2022-07-07T08:38:28.350093+00:00
+PDB$SEED(2):Full restore complete of datafile 6 /opt/oracle/oradata/ORCLCDB/pdbseed/sysaux01.dbf.  Elapsed time: 0:00:08
+PDB$SEED(2):  checkpoint is 2651836
+PDB$SEED(2):  last deallocation scn is 1071312
+2022-07-07T08:38:34.824767+00:00
+Full restore complete of datafile 7 /opt/oracle/oradata/ORCLCDB/users01.dbf.  Elapsed time: 0:00:00
+  checkpoint is 3394471
+  last deallocation scn is 3
+2022-07-07T08:38:37.202234+00:00
+PDB$SEED(2):Full restore complete of datafile 8 /opt/oracle/oradata/ORCLCDB/pdbseed/undotbs01.dbf.  Elapsed time: 0:00:01
+PDB$SEED(2):  checkpoint is 2651836
+PDB$SEED(2):  last deallocation scn is 3
+2022-07-07T08:38:45.968370+00:00
+ORCLPDB1(3):Full restore complete of datafile 9 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf.  Elapsed time: 0:00:07
+ORCLPDB1(3):  checkpoint is 3394474
+ORCLPDB1(3):  last deallocation scn is 2650467
+ORCLPDB1(3):  Undo Optimization current scn is 3392195
+2022-07-07T08:39:04.938729+00:00
+ORCLPDB1(3):Full restore complete of datafile 10 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf.  Elapsed time: 0:00:11
+ORCLPDB1(3):  checkpoint is 3394481
+ORCLPDB1(3):  last deallocation scn is 2979762
+2022-07-07T08:39:10.449540+00:00
+ORCLPDB1(3):Full restore complete of datafile 11 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf.  Elapsed time: 0:00:00
+ORCLPDB1(3):  checkpoint is 3394537
+ORCLPDB1(3):  last deallocation scn is 3323324
+ORCLPDB1(3):  Undo Optimization current scn is 3392238
+2022-07-07T08:39:12.176153+00:00
+ORCLPDB1(3):Full restore complete of datafile 12 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf.  Elapsed time: 0:00:00
+ORCLPDB1(3):  checkpoint is 3394554
+ORCLPDB1(3):  last deallocation scn is 2996732
+2022-07-07T08:39:20.222077+00:00
+DBWR(4):Full restore complete of datafile 13 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf.  Elapsed time: 0:00:06
+DBWR(4):  checkpoint is 3394556
+DBWR(4):  last deallocation scn is 2650467
+DBWR(4):  Undo Optimization current scn is 3392242
+2022-07-07T08:39:38.347502+00:00
+DBWR(4):Full restore complete of datafile 14 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf.  Elapsed time: 0:00:10
+DBWR(4):  checkpoint is 3394563
+DBWR(4):  last deallocation scn is 3025743
+2022-07-07T08:39:44.681658+00:00
+DBWR(4):Full restore complete of datafile 15 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf.  Elapsed time: 0:00:01
+DBWR(4):  checkpoint is 3394601
+DBWR(4):  last deallocation scn is 3323416
+DBWR(4):  Undo Optimization current scn is 3392242
+2022-07-07T08:39:53.712510+00:00
+VENDOR_READ(5):Full restore complete of datafile 16 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf.  Elapsed time: 0:00:06
+VENDOR_READ(5):  checkpoint is 3394604
+VENDOR_READ(5):  last deallocation scn is 2650467
+VENDOR_READ(5):  Undo Optimization current scn is 3392246
+2022-07-07T08:40:10.699446+00:00
+VENDOR_READ(5):Full restore complete of datafile 17 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf.  Elapsed time: 0:00:09
+VENDOR_READ(5):  checkpoint is 3394611
+VENDOR_READ(5):  last deallocation scn is 3025987
+2022-07-07T08:40:17.888265+00:00
+VENDOR_READ(5):Full restore complete of datafile 18 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf.  Elapsed time: 0:00:01
+VENDOR_READ(5):  checkpoint is 3394655
+VENDOR_READ(5):  last deallocation scn is 3387852
+VENDOR_READ(5):  Undo Optimization current scn is 3392465
+2022-07-07T08:40:26.738140+00:00
+VENDOR_WRITE(6):Full restore complete of datafile 19 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf.  Elapsed time: 0:00:06
+VENDOR_WRITE(6):  checkpoint is 3394658
+VENDOR_WRITE(6):  last deallocation scn is 2650467
+VENDOR_WRITE(6):  Undo Optimization current scn is 3392469
+2022-07-07T08:40:44.833271+00:00
+VENDOR_WRITE(6):Full restore complete of datafile 20 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf.  Elapsed time: 0:00:10
+VENDOR_WRITE(6):  checkpoint is 3394665
+VENDOR_WRITE(6):  last deallocation scn is 3026221
+2022-07-07T08:40:51.088263+00:00
+VENDOR_WRITE(6):Full restore complete of datafile 21 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf.  Elapsed time: 0:00:01
+VENDOR_WRITE(6):  checkpoint is 3394672
+VENDOR_WRITE(6):  last deallocation scn is 3391451
+VENDOR_WRITE(6):  Undo Optimization current scn is 3392469
+2022-07-07T08:40:59.576066+00:00
+VENDOR_WRITE1(7):Full restore complete of datafile 22 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf.  Elapsed time: 0:00:06
+VENDOR_WRITE1(7):  checkpoint is 3394675
+VENDOR_WRITE1(7):  last deallocation scn is 2650467
+VENDOR_WRITE1(7):  Undo Optimization current scn is 3392473
+2022-07-07T08:41:10.030630+00:00
+VENDOR_WRITE1(7):Full restore complete of datafile 23 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf.  Elapsed time: 0:00:10
+VENDOR_WRITE1(7):  checkpoint is 3394679
+VENDOR_WRITE1(7):  last deallocation scn is 3026452
+2022-07-07T08:41:16.297860+00:00
+VENDOR_WRITE1(7):Full restore complete of datafile 24 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf.  Elapsed time: 0:00:01
+VENDOR_WRITE1(7):  checkpoint is 3394709
+VENDOR_WRITE1(7):  last deallocation scn is 3391773
+VENDOR_WRITE1(7):  Undo Optimization current scn is 3392910
+2022-07-07T09:11:03.156394+00:00
+Incremental restore complete of datafile 1 /opt/oracle/oradata/ORCLCDB/system01.dbf
+  checkpoint is 3398802
+  last deallocation scn is 2648002
+2022-07-07T09:11:04.305753+00:00
+Incremental restore complete of datafile 3 /opt/oracle/oradata/ORCLCDB/sysaux01.dbf
+  checkpoint is 3398804
+  last deallocation scn is 2974554
+2022-07-07T09:11:06.236215+00:00
+Incremental restore complete of datafile 4 /opt/oracle/oradata/ORCLCDB/undotbs01.dbf
+  checkpoint is 3398806
+  last deallocation scn is 3396310
+2022-07-07T09:11:08.026167+00:00
+Incremental restore complete of datafile 7 /opt/oracle/oradata/ORCLCDB/users01.dbf
+  checkpoint is 3398809
+  last deallocation scn is 3
+2022-07-07T09:11:09.201499+00:00
+ORCLPDB1(3):Incremental restore complete of datafile 9 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+ORCLPDB1(3):  checkpoint is 3398812
+ORCLPDB1(3):  last deallocation scn is 2650467
+2022-07-07T09:11:10.273357+00:00
+ORCLPDB1(3):Incremental restore complete of datafile 10 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+ORCLPDB1(3):  checkpoint is 3398814
+ORCLPDB1(3):  last deallocation scn is 2979762
+ORCLPDB1(3):Incremental restore complete of datafile 11 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+ORCLPDB1(3):  checkpoint is 3398816
+ORCLPDB1(3):  last deallocation scn is 3323324
+2022-07-07T09:11:12.310594+00:00
+ORCLPDB1(3):Incremental restore complete of datafile 12 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+ORCLPDB1(3):  checkpoint is 3398819
+ORCLPDB1(3):  last deallocation scn is 3398439
+2022-07-07T09:11:13.421347+00:00
+DBWR(4):Incremental restore complete of datafile 13 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+DBWR(4):  checkpoint is 3398821
+DBWR(4):  last deallocation scn is 2650467
+2022-07-07T09:11:14.529783+00:00
+DBWR(4):Incremental restore complete of datafile 14 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+DBWR(4):  checkpoint is 3398847
+DBWR(4):  last deallocation scn is 3025743
+DBWR(4):Incremental restore complete of datafile 15 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+DBWR(4):  checkpoint is 3398849
+DBWR(4):  last deallocation scn is 3323416
+2022-07-07T09:11:16.614233+00:00
+VENDOR_READ(5):Incremental restore complete of datafile 16 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+VENDOR_READ(5):  checkpoint is 3398851
+VENDOR_READ(5):  last deallocation scn is 2650467
+2022-07-07T09:11:17.717520+00:00
+VENDOR_READ(5):Incremental restore complete of datafile 17 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+VENDOR_READ(5):  checkpoint is 3398853
+VENDOR_READ(5):  last deallocation scn is 3025987
+2022-07-07T09:11:18.720141+00:00
+VENDOR_READ(5):Incremental restore complete of datafile 18 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+VENDOR_READ(5):  checkpoint is 3398856
+VENDOR_READ(5):  last deallocation scn is 3387852
+2022-07-07T09:11:19.808576+00:00
+VENDOR_WRITE(6):Incremental restore complete of datafile 19 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+VENDOR_WRITE(6):  checkpoint is 3398858
+VENDOR_WRITE(6):  last deallocation scn is 2650467
+2022-07-07T09:11:20.905099+00:00
+VENDOR_WRITE(6):Incremental restore complete of datafile 20 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+VENDOR_WRITE(6):  checkpoint is 3398861
+VENDOR_WRITE(6):  last deallocation scn is 3026221
+2022-07-07T09:11:22.992941+00:00
+VENDOR_WRITE(6):Incremental restore complete of datafile 21 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+VENDOR_WRITE(6):  checkpoint is 3398863
+VENDOR_WRITE(6):  last deallocation scn is 3395270
+2022-07-07T09:11:25.010446+00:00
+VENDOR_WRITE1(7):Incremental restore complete of datafile 22 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+VENDOR_WRITE1(7):  checkpoint is 3398866
+VENDOR_WRITE1(7):  last deallocation scn is 2650467
+2022-07-07T09:11:26.109430+00:00
+VENDOR_WRITE1(7):Incremental restore complete of datafile 23 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+VENDOR_WRITE1(7):  checkpoint is 3398868
+VENDOR_WRITE1(7):  last deallocation scn is 3026452
+2022-07-07T09:11:27.108179+00:00
+VENDOR_WRITE1(7):Incremental restore complete of datafile 24 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+VENDOR_WRITE1(7):  checkpoint is 3398871
+VENDOR_WRITE1(7):  last deallocation scn is 3391773
+2022-07-07T09:11:28.140831+00:00
+alter database recover datafile list clear
+Completed: alter database recover datafile list clear
+alter database recover datafile list
+ 1 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21
+Completed: alter database recover datafile list
+ 1 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21
+alter database recover datafile list
+ 22 , 23 , 24
+Completed: alter database recover datafile list
+ 22 , 23 , 24
+alter database recover
+ if needed start until cancel using backup controlfile
+2022-07-07T09:11:28.147280+00:00
+Media Recovery Start
+ Started logmerger process
+2022-07-07T09:11:28.188140+00:00
+max_pdb is 7
+2022-07-07T09:11:28.245718+00:00
+Parallel Media Recovery started with 2 slaves
+ORA-279 signalled during: alter database recover
+ if needed start until cancel using backup controlfile
+...
+alter database recover cancel
+2022-07-07T09:11:28.586226+00:00
+Signalling error 1152 for datafile 1!
+2022-07-07T09:11:28.675503+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 1: '/opt/oracle/oradata/ORCLCDB/system01.dbf'
+2022-07-07T09:11:28.823630+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_pr00_292708.trc:
+ORA-01547: warning: RECOVER succeeded but OPEN RESETLOGS would get error below
+ORA-01152: file 1 was not restored from a sufficiently old backup 
+ORA-01110: data file 1: '/opt/oracle/oradata/ORCLCDB/system01.dbf'
+ORA-1547 signalled during: alter database recover cancel...
+2022-07-07T09:11:28.901644+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 3: '/opt/oracle/oradata/ORCLCDB/sysaux01.dbf'
+2022-07-07T09:11:29.123581+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 4: '/opt/oracle/oradata/ORCLCDB/undotbs01.dbf'
+2022-07-07T09:11:29.345339+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 7: '/opt/oracle/oradata/ORCLCDB/users01.dbf'
+2022-07-07T09:11:29.566010+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 9: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf'
+2022-07-07T09:11:29.765391+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 10: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf'
+2022-07-07T09:11:29.971974+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 11: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf'
+2022-07-07T09:11:30.180167+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 12: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf'
+2022-07-07T09:11:30.392238+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 13: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf'
+2022-07-07T09:11:30.586977+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 14: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf'
+2022-07-07T09:11:30.795789+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 15: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf'
+2022-07-07T09:11:31.006741+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 16: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf'
+2022-07-07T09:11:31.207929+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 17: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf'
+2022-07-07T09:11:31.489811+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 18: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf'
+2022-07-07T09:11:31.699005+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 19: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf'
+2022-07-07T09:11:31.903078+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 20: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf'
+2022-07-07T09:11:32.110691+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 21: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf'
+2022-07-07T09:11:32.315652+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 22: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf'
+2022-07-07T09:11:32.516803+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 23: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf'
+2022-07-07T09:11:32.724560+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_292714.trc:
+ORA-01110: data file 24: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf'
+2022-07-07T09:11:32.939774+00:00
+Checker run found 20 new persistent data failures
+2022-07-07T09:22:33.006186+00:00
+Incremental restore complete of datafile 1 /opt/oracle/oradata/ORCLCDB/system01.dbf
+  checkpoint is 3400304
+  last deallocation scn is 2648002
+Incremental restore complete of datafile 3 /opt/oracle/oradata/ORCLCDB/sysaux01.dbf
+  checkpoint is 3400306
+  last deallocation scn is 2974554
+2022-07-07T09:22:34.845442+00:00
+Incremental restore complete of datafile 4 /opt/oracle/oradata/ORCLCDB/undotbs01.dbf
+  checkpoint is 3400309
+  last deallocation scn is 3396310
+2022-07-07T09:22:35.881341+00:00
+Incremental restore complete of datafile 7 /opt/oracle/oradata/ORCLCDB/users01.dbf
+  checkpoint is 3400311
+  last deallocation scn is 3
+2022-07-07T09:22:37.010394+00:00
+ORCLPDB1(3):Incremental restore complete of datafile 9 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf
+ORCLPDB1(3):  checkpoint is 3400313
+ORCLPDB1(3):  last deallocation scn is 2650467
+2022-07-07T09:22:38.144324+00:00
+ORCLPDB1(3):Incremental restore complete of datafile 10 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf
+ORCLPDB1(3):  checkpoint is 3400316
+ORCLPDB1(3):  last deallocation scn is 2979762
+ORCLPDB1(3):Incremental restore complete of datafile 11 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf
+ORCLPDB1(3):  checkpoint is 3400318
+ORCLPDB1(3):  last deallocation scn is 3323324
+2022-07-07T09:22:40.144350+00:00
+ORCLPDB1(3):Incremental restore complete of datafile 12 /opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf
+ORCLPDB1(3):  checkpoint is 3400320
+ORCLPDB1(3):  last deallocation scn is 3398439
+2022-07-07T09:22:41.263850+00:00
+DBWR(4):Incremental restore complete of datafile 13 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf
+DBWR(4):  checkpoint is 3400323
+DBWR(4):  last deallocation scn is 2650467
+2022-07-07T09:22:42.364190+00:00
+DBWR(4):Incremental restore complete of datafile 14 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf
+DBWR(4):  checkpoint is 3400325
+DBWR(4):  last deallocation scn is 3025743
+2022-07-07T09:22:43.362710+00:00
+DBWR(4):Incremental restore complete of datafile 15 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf
+DBWR(4):  checkpoint is 3400327
+DBWR(4):  last deallocation scn is 3323416
+2022-07-07T09:22:44.456907+00:00
+VENDOR_READ(5):Incremental restore complete of datafile 16 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf
+VENDOR_READ(5):  checkpoint is 3400330
+VENDOR_READ(5):  last deallocation scn is 2650467
+2022-07-07T09:22:45.556212+00:00
+VENDOR_READ(5):Incremental restore complete of datafile 17 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf
+VENDOR_READ(5):  checkpoint is 3400332
+VENDOR_READ(5):  last deallocation scn is 3025987
+2022-07-07T09:22:46.551010+00:00
+VENDOR_READ(5):Incremental restore complete of datafile 18 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf
+VENDOR_READ(5):  checkpoint is 3400334
+VENDOR_READ(5):  last deallocation scn is 3387852
+2022-07-07T09:22:47.648568+00:00
+VENDOR_WRITE(6):Incremental restore complete of datafile 19 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf
+VENDOR_WRITE(6):  checkpoint is 3400337
+VENDOR_WRITE(6):  last deallocation scn is 2650467
+2022-07-07T09:22:48.757766+00:00
+VENDOR_WRITE(6):Incremental restore complete of datafile 20 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf
+VENDOR_WRITE(6):  checkpoint is 3400339
+VENDOR_WRITE(6):  last deallocation scn is 3026221
+VENDOR_WRITE(6):Incremental restore complete of datafile 21 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf
+VENDOR_WRITE(6):  checkpoint is 3400342
+VENDOR_WRITE(6):  last deallocation scn is 3395270
+2022-07-07T09:22:50.837006+00:00
+VENDOR_WRITE1(7):Incremental restore complete of datafile 22 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf
+VENDOR_WRITE1(7):  checkpoint is 3400344
+VENDOR_WRITE1(7):  last deallocation scn is 2650467
+2022-07-07T09:22:51.942090+00:00
+VENDOR_WRITE1(7):Incremental restore complete of datafile 23 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf
+VENDOR_WRITE1(7):  checkpoint is 3400346
+VENDOR_WRITE1(7):  last deallocation scn is 3026452
+2022-07-07T09:22:52.940565+00:00
+VENDOR_WRITE1(7):Incremental restore complete of datafile 24 /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf
+VENDOR_WRITE1(7):  checkpoint is 3400349
+VENDOR_WRITE1(7):  last deallocation scn is 3391773
+2022-07-07T09:22:53.970855+00:00
+alter database recover datafile list clear
+Completed: alter database recover datafile list clear
+alter database recover datafile list
+ 1 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21
+Completed: alter database recover datafile list
+ 1 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21
+alter database recover datafile list
+ 22 , 23 , 24
+Completed: alter database recover datafile list
+ 22 , 23 , 24
+alter database recover
+ if needed start until cancel using backup controlfile
+2022-07-07T09:22:53.976730+00:00
+Media Recovery Start
+ Started logmerger process
+2022-07-07T09:22:54.017094+00:00
+max_pdb is 7
+2022-07-07T09:22:54.070410+00:00
+Parallel Media Recovery started with 2 slaves
+ORA-279 signalled during: alter database recover
+ if needed start until cancel using backup controlfile
+...
+alter database recover cancel
+2022-07-07T09:22:54.257199+00:00
+Signalling error 1152 for datafile 1!
+2022-07-07T09:22:54.327568+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 1: '/opt/oracle/oradata/ORCLCDB/system01.dbf'
+2022-07-07T09:22:54.480547+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_pr00_295125.trc:
+ORA-01547: warning: RECOVER succeeded but OPEN RESETLOGS would get error below
+ORA-01152: file 1 was not restored from a sufficiently old backup 
+ORA-01110: data file 1: '/opt/oracle/oradata/ORCLCDB/system01.dbf'
+2022-07-07T09:22:54.528751+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 3: '/opt/oracle/oradata/ORCLCDB/sysaux01.dbf'
+ORA-1547 signalled during: alter database recover cancel...
+2022-07-07T09:22:54.727563+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 4: '/opt/oracle/oradata/ORCLCDB/undotbs01.dbf'
+2022-07-07T09:22:54.908497+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 7: '/opt/oracle/oradata/ORCLCDB/users01.dbf'
+2022-07-07T09:22:55.096976+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 9: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/system01.dbf'
+2022-07-07T09:22:55.285868+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 10: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/sysaux01.dbf'
+2022-07-07T09:22:55.466584+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 11: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/undotbs01.dbf'
+2022-07-07T09:22:55.645823+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 12: '/opt/oracle/oradata/ORCLCDB/ORCLPDB1/users01.dbf'
+2022-07-07T09:22:55.823927+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 13: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_system_kc5m5g6t_.dbf'
+2022-07-07T09:22:55.997392+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 14: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m5g73_.dbf'
+2022-07-07T09:22:56.179767+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 15: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m5g74_.dbf'
+2022-07-07T09:22:56.357471+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 16: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_system_kc5m80gp_.dbf'
+2022-07-07T09:22:56.530537+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 17: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_sysaux_kc5m80gq_.dbf'
+2022-07-07T09:22:56.706518+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 18: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_undotbs1_kc5m80gr_.dbf'
+2022-07-07T09:22:56.882885+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 19: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_system_kc5pkgy6_.dbf'
+2022-07-07T09:22:57.058910+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 20: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5pkgyd_.dbf'
+2022-07-07T09:22:57.241500+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 21: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5pkgyf_.dbf'
+2022-07-07T09:22:57.417753+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 22: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_system_kc5po98j_.dbf'
+2022-07-07T09:22:57.595594+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 23: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_sysaux_kc5po98k_.dbf'
+2022-07-07T09:22:57.784689+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_mz00_295131.trc:
+ORA-01110: data file 24: '/opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_undotbs1_kc5po98l_.dbf'
+2022-07-07T09:38:53.244281+00:00
+alter database recover datafile list clear
+Completed: alter database recover datafile list clear
+alter database recover datafile list
+ 1 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21
+Completed: alter database recover datafile list
+ 1 , 3 , 4 , 5 , 6 , 7 , 8 , 9 , 10 , 11 , 12 , 13 , 14 , 15 , 16 , 17 , 18 , 19 , 20 , 21
+alter database recover datafile list
+ 22 , 23 , 24
+Completed: alter database recover datafile list
+ 22 , 23 , 24
+alter database recover
+ if needed start until cancel using backup controlfile
+2022-07-07T09:38:53.249934+00:00
+Media Recovery Start
+ Started logmerger process
+2022-07-07T09:38:53.289280+00:00
+max_pdb is 7
+2022-07-07T09:38:53.343365+00:00
+Parallel Media Recovery started with 2 slaves
+ORA-279 signalled during: alter database recover
+ if needed start until cancel using backup controlfile
+...
+alter database recover logfile '/opt/oracle/reco/arch1_112_1107884035.dbf'
+2022-07-07T09:38:53.613712+00:00
+Media Recovery Log /opt/oracle/reco/arch1_112_1107884035.dbf
+ORA-279 signalled during: alter database recover logfile '/opt/oracle/reco/arch1_112_1107884035.dbf'...
+alter database recover logfile '/opt/oracle/reco/arch1_113_1107884035.dbf'
+2022-07-07T09:38:53.821091+00:00
+Media Recovery Log /opt/oracle/reco/arch1_113_1107884035.dbf
+ORA-279 signalled during: alter database recover logfile '/opt/oracle/reco/arch1_113_1107884035.dbf'...
+alter database recover logfile '/opt/oracle/reco/arch1_114_1107884035.dbf'
+2022-07-07T09:38:54.081093+00:00
+Media Recovery Log /opt/oracle/reco/arch1_114_1107884035.dbf
+2022-07-07T09:38:54.347461+00:00
+ORA-279 signalled during: alter database recover logfile '/opt/oracle/reco/arch1_114_1107884035.dbf'...
+alter database recover logfile '/opt/oracle/reco/arch1_115_1107884035.dbf'
+2022-07-07T09:38:54.353252+00:00
+Media Recovery Log /opt/oracle/reco/arch1_115_1107884035.dbf
+ORA-279 signalled during: alter database recover logfile '/opt/oracle/reco/arch1_115_1107884035.dbf'...
+alter database recover cancel
+2022-07-07T09:38:54.795413+00:00
+Media Recovery Canceled
+Completed: alter database recover cancel
+2022-07-07T09:41:17.885466+00:00
+alter database open resetlogs
+2022-07-07T09:41:17.912115+00:00
+RESETLOGS after incomplete recovery UNTIL CHANGE 3400741 time 07/07/2022 09:29:26
+.... (PID:298942): LNO:1 is wrong incarnation (0x00000000002de11a:07/06/2022 13:38:18 vs 0x000000000027b373:06/20/2022 17:33:55) [krsq.c:2563]
+.... (PID:298942): Clearing online redo logfile 1 /opt/oracle/oradata/ORCLCDB/redo01.log
+ [kcrf.c:3426]
+Clearing online log 1 of thread 1 sequence number 112
+2022-07-07T09:41:20.867423+00:00
+.... (PID:298942): Clearing online redo logfile 1 complete [kcrf.c:3604]
+Resetting resetlogs activation ID 2878944386 (0xab993482)
+Online log /opt/oracle/oradata/ORCLCDB/redo01.log: Thread 1 Group 1 was previously cleared
+Online log /opt/oracle/oradata/ORCLCDB/redo02.log: Thread 1 Group 2 was previously cleared
+Online log /opt/oracle/oradata/ORCLCDB/redo03.log: Thread 1 Group 3 was previously cleared
+2022-07-07T09:41:20.927447+00:00
+Setting recovery target incarnation to 3
+2022-07-07T09:41:20.943488+00:00
+Smart fusion block transfer is disabled:
+  instance mounted in exclusive mode.
+2022-07-07T09:41:20.952683+00:00
+Crash Recovery excluding pdb 2 which was cleanly closed.
+Endian type of dictionary set to little
+2022-07-07T09:41:20.989236+00:00
+Assigning activation ID 2880458382 (0xabb04e8e)
+Redo log for group 1, sequence 1 is not located on DAX storage
+Thread 1 opened at log sequence 1
+  Current log# 1 seq# 1 mem# 0: /opt/oracle/oradata/ORCLCDB/redo01.log
+Successful open of redo thread 1
+2022-07-07T09:41:21.034297+00:00
+MTTR advisory is disabled because FAST_START_MTTR_TARGET is not set
+Stopping change tracking
+Undo initialization recovery: Parallel FPTR failed: start:83189834 end:83189842 diff:8 ms (0.0 seconds)
+Undo initialization recovery: err:0 start: 83189833 end: 83189867 diff: 34 ms (0.0 seconds)
+[298942] Successfully onlined Undo Tablespace 2.
+Undo initialization online undo segments: err:0 start: 83189867 end: 83190080 diff: 213 ms (0.2 seconds)
+Undo initialization finished serial:0 start:83189833 end:83190089 diff:256 ms (0.3 seconds)
+Dictionary check beginning
+2022-07-07T09:41:21.648818+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_dbw0_284502.trc:
+ORA-01186: file 201 failed verification tests
+ORA-01157: cannot identify/lock data file 201 - see DBWR trace file
+ORA-01110: data file 201: '/opt/oracle/oradata/ORCLCDB/temp01.dbf'
+2022-07-07T09:41:21.649193+00:00
+File 201 not verified due to error ORA-01157
+2022-07-07T09:41:21.656296+00:00
+Dictionary check complete
+2022-07-07T09:41:21.661436+00:00
+Starting background process SMCO
+Re-creating tempfile /opt/oracle/oradata/ORCLCDB/temp01.dbf
+2022-07-07T09:41:21.678848+00:00
+SMCO started with pid=44, OS id=299159 
+Database Characterset is AL32UTF8
+No Resource Manager plan active
+2022-07-07T09:41:22.688772+00:00
+Starting background process RCBG
+2022-07-07T09:41:22.704131+00:00
+RCBG started with pid=54, OS id=299165 
+2022-07-07T09:41:22.705713+00:00
+replication_dependency_tracking turned off (no async multimaster replication found)
+LOGSTDBY: Validating controlfile with logical metadata
+LOGSTDBY: Validation complete
+Starting background process AQPC
+2022-07-07T09:41:23.308186+00:00
+AQPC started with pid=55, OS id=299167 
+PDB$SEED(2):Pluggable database PDB$SEED opening in read only
+PDB$SEED(2):Autotune of undo retention is turned on. 
+2022-07-07T09:41:23.457351+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_dbw0_284502.trc:
+ORA-01157: cannot identify/lock data file 202 - see DBWR trace file
+ORA-01110: data file 202: '/opt/oracle/oradata/ORCLCDB/pdbseed/temp012022-06-20_17-34-52-425-PM.dbf'
+ORA-27037: unable to obtain file status
+Linux-x86_64 Error: 2: No such file or directory
+Additional information: 7
+2022-07-07T09:41:23.460367+00:00
+Errors in file /opt/oracle/diag/rdbms/orclcdb/ORCLCDB/trace/ORCLCDB_dbw0_284502.trc:
+ORA-01186: file 202 failed verification tests
+ORA-01157: cannot identify/lock data file 202 - see DBWR trace file
+ORA-01110: data file 202: '/opt/oracle/oradata/ORCLCDB/pdbseed/temp012022-06-20_17-34-52-425-PM.dbf'
+2022-07-07T09:41:23.460642+00:00
+File 202 not verified due to error ORA-01157
+2022-07-07T09:41:23.461401+00:00
+PDB$SEED(2):Endian type of dictionary set to little
+PDB$SEED(2):Undo initialization finished serial:0 start:83192227 end:83192227 diff:0 ms (0.0 seconds)
+PDB$SEED(2):Pluggable database PDB$SEED dictionary check beginning
+2022-07-07T09:41:23.768569+00:00
+PDB$SEED(2):Pluggable Database PDB$SEED Dictionary check complete
+PDB$SEED(2):Database Characterset for PDB$SEED is AL32UTF8
+PDB$SEED(2):Re-creating tempfile /opt/oracle/oradata/ORCLCDB/pdbseed/temp012022-06-20_17-34-52-425-PM.dbf
+PDB$SEED(2):SUPLOG: Set PDB SUPLOG SGA at PDB OPEN, old 0x0, new 0x0 (no suplog)
+2022-07-07T09:41:24.633575+00:00
+PDB$SEED(2):Opening pdb with no Resource Manager plan active
+2022-07-07T09:41:24.843412+00:00
+ORCLPDB1(3):Pluggable database ORCLPDB1 pseudo opening
+2022-07-07T09:41:24.850238+00:00
+VENDOR_WRITE1(7):Pluggable database VENDOR_WRITE1 pseudo opening
+2022-07-07T09:41:24.850885+00:00
+VENDOR_WRITE(6):Pluggable database VENDOR_WRITE pseudo opening
+2022-07-07T09:41:24.851516+00:00
+DBWR(4):Pluggable database DBWR pseudo opening
+2022-07-07T09:41:24.853323+00:00
+VENDOR_READ(5):Pluggable database VENDOR_READ pseudo opening
+2022-07-07T09:41:24.947244+00:00
+VENDOR_WRITE(6):SUPLOG: Initialize PDB SUPLOG SGA, old value 0x0, new value 0x18
+2022-07-07T09:41:24.950581+00:00
+VENDOR_READ(5):SUPLOG: Initialize PDB SUPLOG SGA, old value 0x0, new value 0x18
+VENDOR_WRITE(6):Autotune of undo retention is turned on. 
+VENDOR_READ(5):Autotune of undo retention is turned on. 
+2022-07-07T09:41:24.962460+00:00
+DBWR(4):SUPLOG: Initialize PDB SUPLOG SGA, old value 0x0, new value 0x18
+DBWR(4):Autotune of undo retention is turned on. 
+2022-07-07T09:41:24.964027+00:00
+VENDOR_WRITE1(7):SUPLOG: Initialize PDB SUPLOG SGA, old value 0x0, new value 0x18
+VENDOR_WRITE1(7):Autotune of undo retention is turned on. 
+2022-07-07T09:41:24.974062+00:00
+ORCLPDB1(3):SUPLOG: Initialize PDB SUPLOG SGA, old value 0x0, new value 0x18
+ORCLPDB1(3):Autotune of undo retention is turned on. 
+2022-07-07T09:41:25.032708+00:00
+VENDOR_READ(5):Endian type of dictionary set to little
+2022-07-07T09:41:25.075383+00:00
+DBWR(4):Endian type of dictionary set to little
+2022-07-07T09:41:25.075452+00:00
+VENDOR_WRITE1(7):Endian type of dictionary set to little
+2022-07-07T09:41:25.085067+00:00
+VENDOR_WRITE(6):Endian type of dictionary set to little
+2022-07-07T09:41:25.095258+00:00
+ORCLPDB1(3):Endian type of dictionary set to little
+2022-07-07T09:41:25.649858+00:00
+DBWR(4):Undo initialization recovery: err:0 start: 83194090 end: 83194222 diff: 132 ms (0.1 seconds)
+2022-07-07T09:41:25.703785+00:00
+VENDOR_READ(5):Undo initialization recovery: err:0 start: 83194138 end: 83194276 diff: 138 ms (0.1 seconds)
+2022-07-07T09:41:25.730702+00:00
+VENDOR_WRITE(6):Undo initialization recovery: err:0 start: 83194204 end: 83194302 diff: 98 ms (0.1 seconds)
+2022-07-07T09:41:25.787098+00:00
+ORCLPDB1(3):Undo initialization recovery: err:0 start: 83194219 end: 83194359 diff: 140 ms (0.1 seconds)
+2022-07-07T09:41:26.523493+00:00
+VENDOR_WRITE1(7):Undo initialization recovery: err:0 start: 83194985 end: 83195095 diff: 110 ms (0.1 seconds)
+2022-07-07T09:41:26.537899+00:00
+VENDOR_READ(5):[299175] Successfully onlined Undo Tablespace 2.
+2022-07-07T09:41:26.539767+00:00
+VENDOR_WRITE(6):[299177] Successfully onlined Undo Tablespace 2.
+VENDOR_WRITE(6):Undo initialization online undo segments: err:0 start: 83194303 end: 83195117 diff: 814 ms (0.8 seconds)
+2022-07-07T09:41:26.548175+00:00
+VENDOR_READ(5):Undo initialization online undo segments: err:0 start: 83194277 end: 83195120 diff: 843 ms (0.8 seconds)
+2022-07-07T09:41:26.561431+00:00
+DBWR(4):[299173] Successfully onlined Undo Tablespace 2.
+2022-07-07T09:41:26.562997+00:00
+DBWR(4):Undo initialization online undo segments: err:0 start: 83194227 end: 83195135 diff: 908 ms (0.9 seconds)
+2022-07-07T09:41:26.563337+00:00
+ : 
+2022-07-07T09:41:26.564149+00:00
+QPI: opatch file present, opatch
+ : 
+QPI: qopiprep.bat file present
+2022-07-07T09:41:26.573849+00:00
+VENDOR_WRITE(6):Undo initialization finished serial:0 start:83194204 end:83195146 diff:942 ms (0.9 seconds)
+2022-07-07T09:41:26.573935+00:00
+VENDOR_READ(5):Undo initialization finished serial:0 start:83194138 end:83195146 diff:1008 ms (1.0 seconds)
+VENDOR_READ(5):Pluggable database VENDOR_READ dictionary check beginning
+2022-07-07T09:41:26.577502+00:00
+VENDOR_WRITE(6):Pluggable database VENDOR_WRITE dictionary check beginning
+2022-07-07T09:41:26.592394+00:00
+DBWR(4):Undo initialization finished serial:0 start:83194090 end:83195164 diff:1074 ms (1.1 seconds)
+DBWR(4):Pluggable database DBWR dictionary check beginning
+2022-07-07T09:41:26.676804+00:00
+ORCLPDB1(3):[299171] Successfully onlined Undo Tablespace 2.
+ORCLPDB1(3):Undo initialization online undo segments: err:0 start: 83194367 end: 83195252 diff: 885 ms (0.9 seconds)
+ORCLPDB1(3):Undo initialization finished serial:0 start:83194219 end:83195266 diff:1047 ms (1.0 seconds)
+ORCLPDB1(3):Pluggable database ORCLPDB1 dictionary check beginning
+2022-07-07T09:41:26.723691+00:00
+VENDOR_READ(5):Pluggable Database VENDOR_READ Dictionary check complete
+2022-07-07T09:41:26.731446+00:00
+VENDOR_WRITE(6):Pluggable Database VENDOR_WRITE Dictionary check complete
+2022-07-07T09:41:26.780215+00:00
+DBWR(4):Pluggable Database DBWR Dictionary check complete
+2022-07-07T09:41:26.795580+00:00
+VENDOR_READ(5):Database Characterset for VENDOR_READ is AL32UTF8
+2022-07-07T09:41:26.797525+00:00
+VENDOR_WRITE(6):Database Characterset for VENDOR_WRITE is AL32UTF8
+VENDOR_WRITE(6):Re-creating tempfile /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694C5EE6E0533600000AD354/datafile/o1_mf_temp_kc5pkgyg_.dbf
+2022-07-07T09:41:26.805435+00:00
+VENDOR_READ(5):Re-creating tempfile /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860052650E0533600000A62E0/datafile/o1_mf_temp_kc5m80gs_.dbf
+2022-07-07T09:41:26.810070+00:00
+DBWR(4):Database Characterset for DBWR is AL32UTF8
+DBWR(4):Re-creating tempfile /opt/oracle/oradata/ORCLCDB/ORCLCDB/E205B97860022650E0533600000A62E0/datafile/o1_mf_temp_kc5m5g75_.dbf
+2022-07-07T09:41:26.900476+00:00
+ORCLPDB1(3):Pluggable Database ORCLPDB1 Dictionary check complete
+ORCLPDB1(3):Database Characterset for ORCLPDB1 is AL32UTF8
+ORCLPDB1(3):Re-creating tempfile /opt/oracle/oradata/ORCLCDB/ORCLPDB1/temp01.dbf
+2022-07-07T09:41:27.254699+00:00
+VENDOR_WRITE1(7):[299181] Successfully onlined Undo Tablespace 2.
+VENDOR_WRITE1(7):Undo initialization online undo segments: err:0 start: 83195096 end: 83195829 diff: 733 ms (0.7 seconds)
+VENDOR_WRITE1(7):Undo initialization finished serial:0 start:83194985 end:83195837 diff:852 ms (0.9 seconds)
+VENDOR_WRITE1(7):Pluggable database VENDOR_WRITE1 dictionary check beginning
+VENDOR_WRITE1(7):Pluggable Database VENDOR_WRITE1 Dictionary check complete
+VENDOR_WRITE1(7):Database Characterset for VENDOR_WRITE1 is AL32UTF8
+VENDOR_WRITE1(7):Re-creating tempfile /opt/oracle/oradata/ORCLCDB/ORCLCDB/E20691B5694E5EE6E0533600000AD354/datafile/o1_mf_temp_kc5po98m_.dbf
+2022-07-07T09:41:27.515372+00:00
+DBWR(4):Pluggable database DBWR pseudo closing
+2022-07-07T09:41:27.518600+00:00
+VENDOR_READ(5):Pluggable database VENDOR_READ pseudo closing
+2022-07-07T09:41:27.526311+00:00
+VENDOR_WRITE(6):Pluggable database VENDOR_WRITE pseudo closing
+VENDOR_WRITE(6):JIT: pid 299177 requesting stop
+2022-07-07T09:41:27.533807+00:00
+ORCLPDB1(3):Pluggable database ORCLPDB1 pseudo closing
+ORCLPDB1(3):JIT: pid 299171 requesting stop
+2022-07-07T09:41:27.545506+00:00
+VENDOR_READ(5):JIT: pid 299175 requesting stop
+2022-07-07T09:41:27.550656+00:00
+DBWR(4):JIT: pid 299173 requesting stop
+2022-07-07T09:41:27.562344+00:00
+VENDOR_WRITE1(7):Pluggable database VENDOR_WRITE1 pseudo closing
+VENDOR_WRITE1(7):JIT: pid 299181 requesting stop
+2022-07-07T09:41:27.706622+00:00
+VENDOR_WRITE(6):Closing sequence subsystem (83196278941).
+2022-07-07T09:41:27.733189+00:00
+VENDOR_READ(5):Closing sequence subsystem (83196305531).
+2022-07-07T09:41:27.734717+00:00
+ORCLPDB1(3):Closing sequence subsystem (83196307074).
+2022-07-07T09:41:27.737964+00:00
+DBWR(4):Closing sequence subsystem (83196310280).
+2022-07-07T09:41:27.823833+00:00
+VENDOR_WRITE1(7):Closing sequence subsystem (83196396175).
+2022-07-07T09:41:28.196637+00:00
+VENDOR_WRITE(6):Buffer Cache flush started: 6
+2022-07-07T09:41:28.214864+00:00
+ORCLPDB1(3):Buffer Cache flush started: 3
+2022-07-07T09:41:28.221861+00:00
+VENDOR_READ(5):Buffer Cache flush started: 5
+2022-07-07T09:41:28.228252+00:00
+DBWR(4):Buffer Cache flush started: 4
+2022-07-07T09:41:28.346608+00:00
+VENDOR_WRITE1(7):Buffer Cache flush started: 7
+2022-07-07T09:41:28.350657+00:00
+VENDOR_WRITE(6):Buffer Cache flush finished: 6
+2022-07-07T09:41:28.362447+00:00
+VENDOR_READ(5):Buffer Cache flush finished: 5
+2022-07-07T09:41:28.403315+00:00
+ORCLPDB1(3):Buffer Cache flush finished: 3
+2022-07-07T09:41:28.405172+00:00
+DBWR(4):Buffer Cache flush finished: 4
+2022-07-07T09:41:28.550592+00:00
+VENDOR_WRITE1(7):Buffer Cache flush finished: 7
+2022-07-07T09:41:29.067981+00:00
+Starting background process CJQ0
+2022-07-07T09:41:29.093416+00:00
+CJQ0 started with pid=69, OS id=299328 
+2022-07-07T09:41:29.682395+00:00
+Control autobackup written to DISK device
+
+handle '/opt/oracle/homes/OraDBHome21cEE/dbs/c-2878945410-20220707-01'
+
+Completed: alter database open resetlogs
+2022-07-07T09:41:31.843084+00:00
+===========================================================
+Dumping current patch information
+===========================================================
+No patches have been applied
+===========================================================
+2022-07-07T11:03:45.211577+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 768000K, new size 778240K
+2022-07-07T13:18:36.322774+00:00
+TABLE SYS.ACTIVITY_TABLE$: ADDED INTERVAL PARTITION SYS_P404 (4) VALUES LESS THAN (394)
+2022-07-07T18:05:19.093442+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 778240K, new size 788480K
+2022-07-07T22:00:00.048083+00:00
+Setting Resource Manager plan SCHEDULER[0x52C1]:DEFAULT_MAINTENANCE_PLAN via scheduler window
+Setting Resource Manager CDB plan DEFAULT_MAINTENANCE_PLAN via parameter
+2022-07-07T22:00:03.030695+00:00
+Begin automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+2022-07-07T22:00:06.084269+00:00
+End automatic SQL Tuning Advisor run for special tuning task  "SYS_AUTO_SQL_TUNING_TASK"
+2022-07-07T22:00:13.474072+00:00
+TABLE SYS.WRI$_OPTSTAT_HISTHEAD_HISTORY: ADDED INTERVAL PARTITION SYS_P405 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+TABLE SYS.WRI$_OPTSTAT_HISTGRM_HISTORY: ADDED INTERVAL PARTITION SYS_P408 (44748) VALUES LESS THAN (TO_DATE(' 2022-07-08 00:00:00', 'SYYYY-MM-DD HH24:MI:SS', 'NLS_CALENDAR=GREGORIAN'))
+2022-07-07T22:00:43.467268+00:00
+Resize operation completed for file# 1, fname /opt/oracle/oradata/ORCLCDB/system01.dbf, old size 1372160K, new size 1382400K
+2022-07-07T22:06:12.932218+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 788480K, new size 808960K
+2022-07-07T23:06:26.744224+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 808960K, new size 819200K
+2022-07-07T23:06:51.973515+00:00
+
+XDB installed.
+
+XDB initialized.
+2022-07-08T02:00:00.154940+00:00
+Closing scheduler window
+Closing Resource Manager plan via scheduler window
+Clearing Resource Manager CDB plan via parameter
+2022-07-08T06:07:59.286388+00:00
+Resize operation completed for file# 3, fname /opt/oracle/oradata/ORCLCDB/sysaux01.dbf, old size 819200K, new size 829440K
+2022-07-08T07:03:59.811370+00:00
+Thread 1 advanced to log sequence 2 (LGWR switch),  current SCN: 3484963
+  Current log# 2 seq# 2 mem# 0: /opt/oracle/oradata/ORCLCDB/redo02.log
+2022-07-08T07:04:02.352434+00:00
+ARC1 (PID:285313): Archived Log entry 122 added for B-1109410877.T-1.S-1 ID 0x7f3fabb04e8e LAD:1 [krse.c:4933]

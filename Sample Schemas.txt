@@ -1,0 +1,5 @@
+Data sets for the methodology can be installed in the database by following the directions provided in this link. The use of these products does not require a license. When conducting research and development, Oracle strongly recommends using the following data sets. 
+
+
+In this proposed methodology, we have used the following data sets:
+https://docs.oracle.com/en/database/oracle/oracle-database/21/comsc/installing-sample-schemas.html
